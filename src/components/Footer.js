@@ -3,6 +3,7 @@ import React from "react";
 export default function Footer({ onRegisterClick }) {
   return (
     <>
+    
       <link rel="stylesheet" href="/css/elementor-footer.css" />
       <footer data-elementor-type="footer" data-elementor-id="26719" className="elementor elementor-26719" data-elementor-post-type="elementor_library">
 				<section data-dce-background-color="#333333" className="elementor-section elementor-top-section elementor-element elementor-element-e6d7465 elementor-section-stretched elementor-section-content-middle elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="e6d7465" data-element_type="section" data-settings='{" stretch_section":"section-stretched","background_background":"classic"}'>
