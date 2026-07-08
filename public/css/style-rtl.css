@@ -1,0 +1,154 @@
+/*CSS for Arebic RTL side*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap');
+
+html[lang="ar"] body, 
+html[lang="ar"] .elementor-widget .elementor-heading-title,
+html[lang="ar"] .elementor-widget .elementor-text-editor,
+html[lang="ar"] .elementor-image-box-title, html[lang="ar"] .elementor-image-box-description, html[lang="ar"] .elementor-image-box-sub-title,
+html[lang="ar"] .divider-width h6,
+html[lang="ar"] .text-block h4, html[lang="ar"] .text-block p, html[lang="ar"] .aminities-button,
+html[lang="ar"] .projects_faqs_section button.accordion-button, html[lang="ar"] .projects_faqs_section .accordion-body,
+html[lang="ar"] .elementor-kit-6 a,
+html[lang="ar"] .timeline-section .timeline-content,
+html[lang="ar"] .post-content .dce-content-wrapper{
+    font-family: 'Lateef', sans-serif !important;
+}
+
+html[lang="ar"] .main-header-menu1 ul li a, html[lang="ar"] .rightside-menu span.menu-title{
+    font-size: 16px;
+}
+
+/*Header*/
+
+.arabic-logo{
+    display: none;
+}
+
+body.lang-ar .arabic-logo{
+    display: block;
+}
+
+body.lang-ar .english-logo{
+    display: none;
+}
+
+body.lang-ar .rightside-menu span.menu-title{
+    padding-right: 5px;
+    padding-left: 0px;
+}
+
+body.lang-ar .main-header-menu1 ul#menu-main-menu-arabic > li.menu-item-has-children > a:after{
+    padding-right: 5px;
+    padding-left: 0px;
+}
+
+body.lang-ar .main-header-menu1 ul li a,body.lang-ar .rightside-menu span.menu-title{
+    font-family: 'Lateef', sans-serif !important;
+}
+
+body.lang-ar .main-header-menu1 ul li a{
+    display: flex;
+/*    justify-content: center;*/
+    align-items: center;
+}
+
+body.lang-ar .main-header-menu1 .media-ar{
+    margin-top: 2px;
+}
+
+
+
+/*Home page*/
+
+body.lang-ar .pageBlock h5{
+    font-size: 16px;
+    font-family: 'Lateef', sans-serif !important;
+}
+
+/*project far arrows*/
+body.lang-ar .projects_faqs_section .accordion-button::after{
+    left: 20px;
+    position: absolute;
+}
+
+/*aminities slick slider on project page*/
+body.lang-ar .slick-next {
+    left: 8% !important;
+    right: auto !important;
+    /* top: 98% !important; */
+}
+
+body.lang-ar .slick-prev {
+    left: auto !important;
+    right: 95% !important;
+}
+
+/*project page 3x3 row column sections*/
+
+body.lang-ar .divider-width .border-right{
+    border-left: 1px solid #cccccc;
+     border-right: none!important; 
+}
+
+body.lang-ar .divider-width .border-right:nth-child(3){
+    border-right: none;
+    border-left: none !important;
+}
+
+body.lang-ar .divider-width .border-right:nth-child(6){
+    border-right: none;
+    border-left: none !important;
+}
+
+body.lang-ar .mid-row .elementor-widget-container {
+    border-left: 1px solid #cccccc !important;
+    border-right: none !important;
+}
+
+body.lang-ar .soldout-tag-top-left span{
+    left: 0;
+    transform: rotate(45deg);
+}
+
+@media (min-width: 320px) and (max-width:374px){
+
+    body.lang-ar .text-block{
+        padding-left: 30% !important;
+    }
+    body.lang-ar .slick-next {
+        left: 15% !important;
+    }
+    body.lang-ar .slick-prev {
+        right: 87% !important;
+    }
+    body.lang-ar .projects_faqs_section button.accordion-button{
+        text-align: right;
+    }
+    body.lang-ar .projects_faqs_section .accordion-button::after {
+        left: 8px;
+        position: absolute;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    body.lang-ar .text-block{
+        padding-left: 30% !important;
+    }
+    body.lang-ar .slick-next {
+        left: 15% !important;
+    }
+    body.lang-ar .slick-prev {
+        right: 87% !important;
+    }
+    body.lang-ar .projects_faqs_section button.accordion-button{
+        text-align: right;
+    }
+    body.lang-ar .projects_faqs_section .accordion-button::after {
+        left: 8px;
+        position: absolute;
+    }
+
+}
