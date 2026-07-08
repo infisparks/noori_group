@@ -275,7 +275,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
               borderRadius: "6px",
               border: "1px solid rgba(212, 175, 55, 0.2)",
               boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)",
-              overflow: "hidden",
+              overflowY: "auto",
               animation: "fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
               display: "flex",
               flexDirection: "column"
@@ -527,7 +527,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
           padding: 40px;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: flex-start;
           gap: 18px;
           overflow-y: auto;
           max-height: 80vh;
@@ -570,19 +570,21 @@ export default function FeaturedProjects({ onRegisterClick }) {
           
           /* Modal Responsive Stack */
           .modal-grid {
-            grid-template-columns: 1fr !important;
-            max-height: 90vh !important;
+            display: block !important;
+            height: auto !important;
+            max-height: none !important;
           }
           .modal-image-wrapper {
-            height: auto !important;
-            min-height: auto !important;
+            height: 220px !important;
+            min-height: 220px !important;
           }
           .modal-project-img {
-            height: auto !important;
+            height: 100% !important;
           }
           .modal-info-block {
             padding: 24px !important;
-            max-height: calc(90vh - 220px) !important;
+            max-height: none !important;
+            overflow-y: visible !important;
           }
         }
       `}</style>
