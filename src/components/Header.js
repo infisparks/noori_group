@@ -66,7 +66,7 @@ export default function Header({ onRegisterClick }) {
           {/* ── Logo ── */}
           <a href="/" style={{ display: "block", flexShrink: 0 }}>
             <img
-              src="/images/logo.png"
+              src="/images/building/logo/logo.png"
               alt="Noori Group of Companies"
               style={{
                 height: "48px",
