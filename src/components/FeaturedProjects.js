@@ -575,11 +575,12 @@ export default function FeaturedProjects({ onRegisterClick }) {
             max-height: none !important;
           }
           .modal-image-wrapper {
-            height: 220px !important;
-            min-height: 220px !important;
+            height: auto !important;
+            min-height: auto !important;
           }
           .modal-project-img {
-            height: 100% !important;
+            height: auto !important;
+            width: 100% !important;
           }
           .modal-info-block {
             padding: 24px !important;
