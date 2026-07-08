@@ -60,7 +60,7 @@ export default function FeaturedProjects() {
               
               {/* Desktop Showcase */}
               <div 
-                className="elementor-element elementor-element-73b2217 elementor-hidden-mobile elementor-hidden-tablet elementor-widget elementor-widget-shortcode" 
+                className="elementor-element elementor-element-73b2217 elementor-hidden-mobile elementor-hidden-tablet elementor-widget elementor-widget-shortcode noori-projects-desktop" 
                 data-id="73b2217" 
                 data-element_type="widget" 
                 data-widget_type="shortcode.default"
@@ -83,7 +83,7 @@ export default function FeaturedProjects() {
 
               {/* Mobile Showcase */}
               <div 
-                className="elementor-element elementor-element-cbcfa8e elementor-hidden-desktop elementor-widget elementor-widget-shortcode" 
+                className="elementor-element elementor-element-cbcfa8e elementor-hidden-desktop elementor-widget elementor-widget-shortcode noori-projects-mobile" 
                 data-id="cbcfa8e" 
                 data-element_type="widget" 
                 data-widget_type="shortcode.default"
@@ -108,6 +108,18 @@ export default function FeaturedProjects() {
           </div>
         </div>
       </section>
+
+      {/* Guaranteed show/hide responsive rules */}
+      <style>{`
+        @media (min-width: 900px) {
+          .noori-projects-desktop { display: block !important; }
+          .noori-projects-mobile  { display: none !important; }
+        }
+        @media (max-width: 899px) {
+          .noori-projects-desktop { display: none !important; }
+          .noori-projects-mobile  { display: block !important; }
+        }
+      `}</style>
     </>
   );
 }
