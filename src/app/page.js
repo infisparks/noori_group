@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import LatestLaunch from "@/components/LatestLaunch";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import HeroBanner from "@/components/HeroBanner";
+import AboutSection from "@/components/AboutSection";
 import RegisterInterestModal from "@/components/RegisterInterestModal";
 
 export default function Home() {
@@ -21,7 +22,10 @@ export default function Home() {
       {/* 2. Hero Banner – full screen */}
       <HeroBanner onRegisterClick={handleOpenModal} />
 
-      {/* 3. Remaining page sections */}
+      {/* 3. About Section */}
+      <AboutSection />
+
+      {/* 4. Remaining page sections */}
       <LatestLaunch />
       <FeaturedProjects />
 
