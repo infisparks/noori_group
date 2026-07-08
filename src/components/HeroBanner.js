@@ -39,7 +39,7 @@ export default function HeroBanner({ onRegisterClick }) {
             zIndex: 2,
             width: "100%",
             height: "100%",
-            paddingLeft: "145px", // Aligns with the N in NOORI logo
+            paddingLeft: "80px", // Aligns with the left ornament of the logo frame
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
