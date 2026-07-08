@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function FeaturedProjects({ onRegisterClick }) {
+  const [activeIdx, setActiveIdx] = useState(null);
   const [selectedIdx, setSelectedIdx] = useState(null);
 
   const projects = [
@@ -30,6 +31,39 @@ export default function FeaturedProjects({ onRegisterClick }) {
       imageMobile: "/images/building/mobile version/bluebells.jpg",
     },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const wrappers = document.querySelectorAll(".noori-project-wrapper");
+      let currentActive = null;
+      let minDistance = Infinity;
+      const viewportCenter = window.innerHeight / 2;
+
+      wrappers.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        // Calculate the vertical center of this project wrapper
+        const elementCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(elementCenter - viewportCenter);
+
+        // Active if the center of the element is within 40% of the viewport height
+        if (distance < minDistance && distance < window.innerHeight * 0.4) {
+          minDistance = distance;
+          currentActive = index;
+        }
+      });
+
+      if (currentActive !== null) {
+        // Map index back to projects array (handling desktop and mobile duplicates)
+        setActiveIdx(currentActive % projects.length);
+      } else {
+        setActiveIdx(null);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check on mount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -110,33 +144,42 @@ export default function FeaturedProjects({ onRegisterClick }) {
               >
                 <div className="elementor-widget-container">
                   <div className="home-featured-section">
-                    {projects.map((proj, idx) => (
-                      <div 
-                        key={idx}
-                        className="noori-project-wrapper"
-                        style={{ position: "relative", overflow: "hidden", cursor: "pointer" }}
-                      >
+                    {projects.map((proj, idx) => {
+                      const isActive = activeIdx === idx;
+                      return (
                         <div 
-                          className="featured-background-desktop pageBlock" 
-                          style={{ 
-                            backgroundImage: `url('${proj.imageDesktop}')`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat"
-                          }} 
-                        />
-                        {/* Desktop Hover Overlay */}
-                        <div className="project-hover-overlay">
-                          <h3 className="project-hover-title">{proj.title}</h3>
-                          <button 
-                            className="project-hover-btn" 
-                            onClick={() => setSelectedIdx(idx)}
+                          key={idx}
+                          className="noori-project-wrapper"
+                          style={{ position: "relative", overflow: "hidden" }}
+                        >
+                          <div 
+                            className="featured-background-desktop pageBlock" 
+                            style={{ 
+                              backgroundImage: `url('${proj.imageDesktop}')`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                              backgroundRepeat: "no-repeat"
+                            }} 
+                          />
+                          {/* Centered Overlay */}
+                          <div 
+                            className="project-hover-overlay"
+                            style={{
+                              opacity: isActive ? 1 : 0,
+                              pointerEvents: isActive ? "auto" : "none"
+                            }}
                           >
-                            View Details
-                          </button>
+                            <h3 className="project-hover-title">{proj.title}</h3>
+                            <button 
+                              className="project-hover-btn" 
+                              onClick={() => setSelectedIdx(idx)}
+                            >
+                              View Details
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                   <div className="elementor-shortcode"></div>
                 </div>
@@ -151,33 +194,42 @@ export default function FeaturedProjects({ onRegisterClick }) {
               >
                 <div className="elementor-widget-container">
                   <div className="home-featured-section featured-section-mobile">
-                    {projects.map((proj, idx) => (
-                      <div 
-                        key={idx}
-                        className="noori-project-wrapper"
-                        style={{ position: "relative", overflow: "hidden", cursor: "pointer" }}
-                      >
+                    {projects.map((proj, idx) => {
+                      const isActive = activeIdx === idx;
+                      return (
                         <div 
-                          className="featured-background-mobile pageBlock" 
-                          style={{ 
-                            backgroundImage: `url('${proj.imageMobile}')`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat"
-                          }} 
-                        />
-                        {/* Mobile Permanent Bottom Banner */}
-                        <div className="project-hover-overlay">
-                          <h3 className="project-hover-title">{proj.title}</h3>
-                          <button 
-                            className="project-hover-btn" 
-                            onClick={() => setSelectedIdx(idx)}
+                          key={idx}
+                          className="noori-project-wrapper"
+                          style={{ position: "relative", overflow: "hidden" }}
+                        >
+                          <div 
+                            className="featured-background-mobile pageBlock" 
+                            style={{ 
+                              backgroundImage: `url('${proj.imageMobile}')`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                              backgroundRepeat: "no-repeat"
+                            }} 
+                          />
+                          {/* Centered Overlay */}
+                          <div 
+                            className="project-hover-overlay"
+                            style={{
+                              opacity: isActive ? 1 : 0,
+                              pointerEvents: isActive ? "auto" : "none"
+                            }}
                           >
-                            View Details
-                          </button>
+                            <h3 className="project-hover-title">{proj.title}</h3>
+                            <button 
+                              className="project-hover-btn" 
+                              onClick={() => setSelectedIdx(idx)}
+                            >
+                              View Details
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                   <div className="elementor-shortcode"></div>
                 </div>
@@ -194,8 +246,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
           style={{
             position: "fixed",
             inset: 0,
-            backgroundColor: "rgba(5, 12, 35, 0.85)",
-            backdropFilter: "blur(8px)",
+            backgroundColor: "rgba(5, 12, 35, 0.8)",
             zIndex: 9999,
             display: "flex",
             alignItems: "center",
@@ -384,39 +435,38 @@ export default function FeaturedProjects({ onRegisterClick }) {
           position: relative;
         }
         
-        /* Desktop Hover Overlay CSS */
+        /* Centered Hover Overlay CSS */
         .project-hover-overlay {
           position: absolute;
           inset: 0;
-          background-color: rgba(5, 12, 35, 0.85);
+          background-color: rgba(5, 12, 35, 0.4);
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           gap: 16px;
-          opacity: 0;
-          transition: opacity 0.3s ease;
+          transition: opacity 0.4s ease-in-out;
           z-index: 10;
         }
-        .noori-project-wrapper:hover .project-hover-overlay {
-          opacity: 1;
-        }
+        
         .project-hover-title {
           font-family: 'Cinzel', serif;
           color: #ffffff;
-          font-size: 16px;
-          letter-spacing: 1px;
+          font-size: 18px;
+          letter-spacing: 1.5px;
           margin: 0;
           text-align: center;
           padding: 0 16px;
           text-transform: uppercase;
+          text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
+        
         .project-hover-btn {
           background-color: transparent;
           color: #d4af37;
           border: 1px solid #d4af37;
           border-radius: 4px;
-          padding: 8px 20px;
+          padding: 10px 24px;
           font-family: 'Cinzel', serif;
           font-size: 11px;
           font-weight: 600;
@@ -424,6 +474,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
           text-transform: uppercase;
           cursor: pointer;
           transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.25);
         }
         .project-hover-btn:hover {
           background-color: #d4af37;
@@ -452,6 +503,12 @@ export default function FeaturedProjects({ onRegisterClick }) {
         @media (min-width: 1025px) {
           .noori-projects-desktop { display: block !important; }
           .noori-projects-mobile  { display: none !important; }
+          
+          /* Hover override for desktop */
+          .noori-project-wrapper:hover .project-hover-overlay {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+          }
         }
         
         /* Mobile / Tablet layouts styling */
@@ -459,31 +516,12 @@ export default function FeaturedProjects({ onRegisterClick }) {
           .noori-projects-desktop { display: none !important; }
           .noori-projects-mobile  { display: block !important; }
           
-          /* Permanent visible bottom strip for mobile */
-          .project-hover-overlay {
-            position: absolute;
-            inset: auto 0 0 0 !important;
-            height: 64px !important;
-            background-color: rgba(5, 12, 35, 0.9) !important;
-            flex-direction: row !important;
-            justify-content: space-between !important;
-            padding: 0 16px !important;
-            opacity: 1 !important;
-            gap: 8px !important;
-          }
           .project-hover-title {
-            font-size: 11px !important;
-            text-align: left !important;
-            padding: 0 !important;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 60%;
+            font-size: 14px !important;
           }
           .project-hover-btn {
-            padding: 6px 12px !important;
-            font-size: 9px !important;
-            flex-shrink: 0;
+            padding: 8px 18px !important;
+            font-size: 10px !important;
           }
           
           /* Modal Responsive Stack */
