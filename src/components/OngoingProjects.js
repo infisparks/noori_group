@@ -84,9 +84,8 @@ export default function OngoingProjects({ onRegisterClick }) {
   }, [selectedIdx]);
 
   return (
-    <>
+    <div id="ongoing-projects">
       <div 
-        id="ongoing-projects"
         style={{
           backgroundColor: "#ffffff",
           padding: "50px 24px 25px",
@@ -289,7 +288,7 @@ export default function OngoingProjects({ onRegisterClick }) {
                 right: "15px",
                 backgroundColor: "transparent",
                 border: "none",
-                color: "#0a1628",
+                color: isModalMobile ? "#ffffff" : "#0a1628",
                 fontSize: "20px",
                 fontWeight: "300",
                 cursor: "pointer",
@@ -301,6 +300,7 @@ export default function OngoingProjects({ onRegisterClick }) {
                 alignItems: "center",
                 justifyContent: "center",
                 transition: "all 0.2s ease",
+                textShadow: isModalMobile ? "0 1px 4px rgba(0,0,0,0.6)" : "none",
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.backgroundColor = "rgba(5, 12, 35, 0.05)";
@@ -308,7 +308,7 @@ export default function OngoingProjects({ onRegisterClick }) {
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = "#0a1628";
+                e.currentTarget.style.color = isModalMobile ? "#ffffff" : "#0a1628";
               }}
             >
               ✕
@@ -584,6 +584,6 @@ export default function OngoingProjects({ onRegisterClick }) {
           }
         }
       `}</style>
-    </>
+    </div>
   );
 }
