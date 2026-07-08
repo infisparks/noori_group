@@ -5,6 +5,7 @@ import LatestLaunch from "@/components/LatestLaunch";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import HeroBanner from "@/components/HeroBanner";
 import AboutSection from "@/components/AboutSection";
+import ValuesSection from "@/components/ValuesSection";
 import RegisterInterestModal from "@/components/RegisterInterestModal";
 
 export default function Home() {
@@ -28,7 +29,10 @@ export default function Home() {
       {/* 4. Featured Projects */}
       <FeaturedProjects />
 
-      {/* 5. Remaining page sections */}
+      {/* 5. Our Values Section */}
+      <ValuesSection />
+
+      {/* 6. Remaining page sections */}
       <LatestLaunch />
 
       {/* Modal */}
