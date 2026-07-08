@@ -268,12 +268,15 @@ export default function FeaturedProjects({ onRegisterClick }) {
               position: "relative",
               width: "100%",
               maxWidth: "850px",
+              maxHeight: "90vh",
               backgroundColor: "#ffffff",
               borderRadius: "6px",
               border: "1px solid rgba(212, 175, 55, 0.2)",
               boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)",
               overflow: "hidden",
               animation: "fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+              display: "flex",
+              flexDirection: "column"
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -319,7 +322,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
                   position: "relative",
                   width: "100%",
                   height: "100%",
-                  minHeight: "300px",
+                  minHeight: "220px",
                   backgroundImage: `url('${
                     isModalMobile
                       ? projects[selectedIdx].imageDesktop
@@ -331,17 +334,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
               />
 
               {/* Right Column: Information */}
-              <div
-                style={{
-                  padding: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "18px",
-                  maxHeight: "80vh",
-                  overflowY: "auto",
-                }}
-              >
+              <div className="modal-info-block">
                 <div>
                   <div
                     style={{
@@ -486,6 +479,19 @@ export default function FeaturedProjects({ onRegisterClick }) {
           display: grid;
           grid-template-columns: 1.1fr 1.3fr;
           align-items: stretch;
+          height: 100%;
+          max-height: 90vh;
+        }
+
+        /* Modal Information block */
+        .modal-info-block {
+          padding: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 18px;
+          overflow-y: auto;
+          max-height: 80vh;
         }
 
         @keyframes fadeInUp {
@@ -526,13 +532,15 @@ export default function FeaturedProjects({ onRegisterClick }) {
           /* Modal Responsive Stack */
           .modal-grid {
             grid-template-columns: 1fr !important;
+            max-height: 90vh !important;
           }
           .modal-grid > div:first-child {
             height: 220px !important;
             min-height: 220px !important;
           }
-          .modal-grid > div:last-child {
+          .modal-info-block {
             padding: 24px !important;
+            max-height: calc(90vh - 220px) !important;
           }
         }
       `}</style>
