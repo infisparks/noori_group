@@ -4,43 +4,56 @@ export default function FeaturedProjects() {
   return (
     <>
       <div 
-        className="elementor-element elementor-element-19fc01f e-flex e-con-boxed e-con e-parent e-lazyloaded" 
-        data-id="19fc01f" 
-        data-element_type="container" 
-        id="new-launches"
+        id="featured-projects"
+        style={{
+          backgroundColor: "#ffffff",
+          padding: "35px 24px 15px",
+          textAlign: "center",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px"
+        }}
       >
-        <div className="e-con-inner">
-          <div 
-            className="elementor-element elementor-element-3641e2f elementor-widget elementor-widget-heading" 
-            data-id="3641e2f" 
-            data-element_type="widget" 
-            id="title" 
-            data-widget_type="heading.default"
-          >
-            <div className="elementor-widget-container">
-              <div className="elementor-heading-wrapper">
-                <div className="elementor-heading-wrapper-inner">
-                  <h2 className="elementor-heading-title elementor-size-default">Featured</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div 
-            className="elementor-element elementor-element-ad79854 elementor-widget elementor-widget-heading" 
-            data-id="ad79854" 
-            data-element_type="widget" 
-            id="sub-title" 
-            data-widget_type="heading.default"
-          >
-            <div className="elementor-widget-container">
-              <div className="elementor-heading-wrapper">
-                <div className="elementor-heading-wrapper-inner">
-                  <h2 className="elementor-heading-title elementor-size-default">PROJECTS</h2>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Gold Subtitle Accent */}
+        <div
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: "10px",
+            fontWeight: "700",
+            color: "#d4af37",
+            letterSpacing: "3px",
+            textTransform: "uppercase",
+          }}
+        >
+          Exclusive Portfolio
         </div>
+
+        {/* Main Heading */}
+        <h2
+          style={{
+            fontFamily: "'Cinzel', serif",
+            fontSize: "28px",
+            fontWeight: "400",
+            color: "#0a1628",
+            margin: 0,
+            letterSpacing: "1.5px",
+            lineHeight: "1.25"
+          }}
+        >
+          OUR <span style={{ color: "#d4af37" }}>PROJECTS</span>
+        </h2>
+
+        {/* Accent Divider Line */}
+        <div
+          style={{
+            width: "50px",
+            height: "2px",
+            backgroundColor: "#d4af37",
+            marginTop: "2px"
+          }}
+        />
       </div>
 
       <section 
