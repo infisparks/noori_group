@@ -58,7 +58,7 @@ export default function FeaturedProjects() {
           >
             <div className="elementor-widget-wrap elementor-element-populated">
               
-              {/* Desktop Showcase */}
+              {/* Desktop Showcase (visible on width >= 1025px) */}
               <div 
                 className="elementor-element elementor-element-73b2217 elementor-hidden-mobile elementor-hidden-tablet elementor-widget elementor-widget-shortcode noori-projects-desktop" 
                 data-id="73b2217" 
@@ -68,20 +68,44 @@ export default function FeaturedProjects() {
                 <div className="elementor-widget-container">
                   <div className="home-featured-section">
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url('/images/building/PC VERSION/NOORIGEIGHT.png')" }} />
+                      <div 
+                        className="featured-background-desktop pageBlock" 
+                        style={{ 
+                          backgroundImage: "url('/images/building/PC VERSION/NOORIGEIGHT.png')",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat"
+                        }} 
+                      />
                     </a>
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url('/images/building/PC VERSION/BELLAVISTA.png')" }} />
+                      <div 
+                        className="featured-background-desktop pageBlock" 
+                        style={{ 
+                          backgroundImage: "url('/images/building/PC VERSION/BELLAVISTA.png')",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat"
+                        }} 
+                      />
                     </a>
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url('/images/building/PC VERSION/BLUEBELLS.png')" }} />
+                      <div 
+                        className="featured-background-desktop pageBlock" 
+                        style={{ 
+                          backgroundImage: "url('/images/building/PC VERSION/BLUEBELLS.png')",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat"
+                        }} 
+                      />
                     </a>
                   </div>
                   <div className="elementor-shortcode"></div>
                 </div>
               </div>
 
-              {/* Mobile Showcase */}
+              {/* Mobile Showcase (visible on width <= 1024px including tablets) */}
               <div 
                 className="elementor-element elementor-element-cbcfa8e elementor-hidden-desktop elementor-widget elementor-widget-shortcode noori-projects-mobile" 
                 data-id="cbcfa8e" 
@@ -91,13 +115,37 @@ export default function FeaturedProjects() {
                 <div className="elementor-widget-container">
                   <div className="home-featured-section featured-section-mobile">
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url('/images/building/mobile version/nooriheight.png')" }} />
+                      <div 
+                        className="featured-background-mobile pageBlock" 
+                        style={{ 
+                          backgroundImage: "url('/images/building/mobile version/nooriheight.png')",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat"
+                        }} 
+                      />
                     </a>
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url('/images/building/mobile version/bellavista.png')" }} />
+                      <div 
+                        className="featured-background-mobile pageBlock" 
+                        style={{ 
+                          backgroundImage: "url('/images/building/mobile version/bellavista.png')",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat"
+                        }} 
+                      />
                     </a>
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url('/images/building/mobile version/bluebells.png')" }} />
+                      <div 
+                        className="featured-background-mobile pageBlock" 
+                        style={{ 
+                          backgroundImage: "url('/images/building/mobile version/bluebells.png')",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat"
+                        }} 
+                      />
                     </a>
                   </div>
                   <div className="elementor-shortcode"></div>
@@ -109,13 +157,13 @@ export default function FeaturedProjects() {
         </div>
       </section>
 
-      {/* Guaranteed show/hide responsive rules */}
+      {/* Guaranteed show/hide responsive rules - tablet and mobile load mobile version */}
       <style>{`
-        @media (min-width: 900px) {
+        @media (min-width: 1025px) {
           .noori-projects-desktop { display: block !important; }
           .noori-projects-mobile  { display: none !important; }
         }
-        @media (max-width: 899px) {
+        @media (max-width: 1024px) {
           .noori-projects-desktop { display: none !important; }
           .noori-projects-mobile  { display: block !important; }
         }
