@@ -26,7 +26,7 @@ export default function HeroBanner({ onRegisterClick }) {
             inset: 0,
             backgroundImage: "url('/images/building/PC VERSION/HEROSECTION.png')",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "left center",
             backgroundRepeat: "no-repeat",
             zIndex: 0,
           }}
@@ -38,18 +38,16 @@ export default function HeroBanner({ onRegisterClick }) {
             position: "relative",
             zIndex: 2,
             width: "100%",
-            maxWidth: "1320px",
             height: "100%",
-            margin: "0 auto",
-            padding: "0 48px",
+            paddingLeft: "145px", // Aligns with the N in NOORI logo
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "flex-start",
           }}
         >
-          {/* Constrain width to 45% to keep it strictly inside the left blue space */}
-          <div style={{ maxWidth: "480px", paddingTop: "80px" }}>
+          {/* Constrain width to keep it strictly inside the left blue space */}
+          <div style={{ maxWidth: "480px", paddingTop: "140px" }}>
             <h1
               style={{
                 fontFamily: "'Cinzel', serif",
