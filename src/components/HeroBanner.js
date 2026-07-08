@@ -1,85 +1,72 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   DESKTOP HERO  (≥ 900 px)
-   – Full-viewport, display PC version of the hero image as-is
- ───────────────────────────────────────────────────────────── */
-function DesktopHero() {
-  return (
-    <section
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100vh",
-        overflow: "hidden",
-        backgroundColor: "#0a1628",
-      }}
-    >
-      {/* Background image */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "url('/images/building/PC VERSION/HEROSECTION.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          zIndex: 0,
-        }}
-      />
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────
-   MOBILE HERO  (< 900 px)
-   – Full-viewport, display mobile version of the hero image as-is
- ───────────────────────────────────────────────────────────── */
-function MobileHero() {
-  return (
-    <section
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100vh",
-        overflow: "hidden",
-        backgroundColor: "#0a1628",
-      }}
-    >
-      {/* Mobile background image */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "url('/images/building/mobile version/HEROSECTION.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-          backgroundRepeat: "no-repeat",
-          zIndex: 0,
-        }}
-      />
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────
-   ROOT EXPORT – picks correct hero based on viewport width
+   HERO BANNER
+   – Pure CSS media queries to eliminate layout shift and SSR flash
  ───────────────────────────────────────────────────────────── */
 export default function HeroBanner() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [ready, setReady] = useState(false);
+  return (
+    <>
+      {/* Desktop Hero Section */}
+      <section
+        className="noori-hero-desktop"
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100vh",
+          overflow: "hidden",
+          backgroundColor: "#0a1628",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/images/building/PC VERSION/HEROSECTION.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            zIndex: 0,
+          }}
+        />
+      </section>
 
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 900);
-    check();
-    setReady(true);
-    window.addEventListener("resize", check, { passive: true });
-    return () => window.removeEventListener("resize", check);
-  }, []);
+      {/* Mobile Hero Section */}
+      <section
+        className="noori-hero-mobile"
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100vh",
+          overflow: "hidden",
+          backgroundColor: "#0a1628",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/images/building/mobile version/HEROSECTION.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center top",
+            backgroundRepeat: "no-repeat",
+            zIndex: 0,
+          }}
+        />
+      </section>
 
-  // Avoid flash of wrong layout on SSR
-  if (!ready) return null;
-
-  return isMobile ? <MobileHero /> : <DesktopHero />;
+      {/* Inline styles for show/hide responsive behavior */}
+      <style>{`
+        @media (min-width: 900px) {
+          .noori-hero-desktop { display: block !important; }
+          .noori-hero-mobile  { display: none !important; }
+        }
+        @media (max-width: 899px) {
+          .noori-hero-desktop { display: none !important; }
+          .noori-hero-mobile  { display: block !important; }
+        }
+      `}</style>
+    </>
+  );
 }
