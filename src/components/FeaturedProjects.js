@@ -67,20 +67,14 @@ export default function FeaturedProjects() {
               >
                 <div className="elementor-widget-container">
                   <div className="home-featured-section">
-                    <a href="https://danubeproperties.com/portfolio/serenz/">
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url(/images/Hoepage.webp)" }} />
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url('/images/building/PC VERSION/NOORIGEIGHT.png')" }} />
                     </a>
-                    <a href="https://danubeproperties.com/portfolio/shahrukhz/">
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url(/images/WEB.webp)" }} />
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url('/images/building/PC VERSION/BELLAVISTA.png')" }} />
                     </a>
-                    <a href="https://danubeproperties.com/portfolio/breez/">
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url(/images/BANNER-1.webp)" }} />
-                    </a>
-                    <a href="https://danubeproperties.com/portfolio/aspirz/">
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url(/images/aspirz-image-1.webp)" }} />
-                    </a>
-                    <a href="https://danubeproperties.com/portfolio/sparklz/">
-                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url(/images/fatured_SPARKLZ.jpg)" }} />
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                      <div className="featured-background-desktop pageBlock" style={{ backgroundImage: "url('/images/building/PC VERSION/BLUEBELLS.png')" }} />
                     </a>
                   </div>
                   <div className="elementor-shortcode"></div>
@@ -96,20 +90,14 @@ export default function FeaturedProjects() {
               >
                 <div className="elementor-widget-container">
                   <div className="home-featured-section featured-section-mobile">
-                    <a href="https://danubeproperties.com/portfolio/serenz/">
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url(/images/mobile.webp)" }} />
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url('/images/building/mobile version/nooriheight.png')" }} />
                     </a>
-                    <a href="https://danubeproperties.com/portfolio/shahrukhz/">
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url(/images/BANNER.webp)" }} />
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url('/images/building/mobile version/bellavista.png')" }} />
                     </a>
-                    <a href="https://danubeproperties.com/portfolio/breez/">
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url(/images/home_mobile-1.jpg)" }} />
-                    </a>
-                    <a href="https://danubeproperties.com/portfolio/aspirz/">
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url(/images/ASPIRZ_BANNER-1.webp)" }} />
-                    </a>
-                    <a href="https://danubeproperties.com/portfolio/sparklz/">
-                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url(/images/fatured_mobile_SPARKLZ.jpg)" }} />
+                    <a href="#" onClick={(e) => e.preventDefault()}>
+                      <div className="featured-background-mobile pageBlock" style={{ backgroundImage: "url('/images/building/mobile version/bluebells.png')" }} />
                     </a>
                   </div>
                   <div className="elementor-shortcode"></div>
