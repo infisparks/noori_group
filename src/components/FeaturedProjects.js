@@ -5,6 +5,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
   const [activeIdx, setActiveIdx] = useState(null);
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [isModalMobile, setIsModalMobile] = useState(false);
+  const [isDescExpanded, setIsDescExpanded] = useState(false);
 
   const projects = [
     {
@@ -66,6 +67,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
   // Monitor viewport size specifically for popup modal image rendering
   useEffect(() => {
     if (selectedIdx === null) return;
+    setIsDescExpanded(false); // Reset expanded text state when opening/changing project popup
     const handleModalResize = () => {
       setIsModalMobile(window.innerWidth < 1025);
     };
@@ -385,10 +387,35 @@ export default function FeaturedProjects({ onRegisterClick }) {
                     color: "#4a5568",
                     fontWeight: "300",
                     margin: 0,
+                    display: isDescExpanded ? "block" : "-webkit-box",
+                    WebkitLineClamp: isDescExpanded ? "none" : 5,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   {projects[selectedIdx].description}
                 </p>
+
+                {/* Read More button inside Modal */}
+                <button
+                  onClick={() => setIsDescExpanded(!isDescExpanded)}
+                  style={{
+                    alignSelf: "flex-start",
+                    backgroundColor: "transparent",
+                    border: "none",
+                    color: "#d4af37",
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: "11px",
+                    fontWeight: "600",
+                    letterSpacing: "1px",
+                    cursor: "pointer",
+                    padding: "4px 0",
+                    marginTop: "-10px",
+                  }}
+                >
+                  {isDescExpanded ? "READ LESS —" : "READ MORE +"}
+                </button>
 
                 <button
                   onClick={() => {
