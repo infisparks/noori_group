@@ -317,23 +317,17 @@ export default function FeaturedProjects({ onRegisterClick }) {
             {/* Modal Body Grid */}
             <div className="modal-grid">
               {/* Left Column: Image (Desktop popup shows mobile portrait, Mobile popup shows desktop landscape) */}
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  height: "100%",
-                  minHeight: "220px",
-                  backgroundImage: `url('${
+              <div className="modal-image-wrapper">
+                <img
+                  src={
                     isModalMobile
                       ? projects[selectedIdx].imageDesktop
                       : projects[selectedIdx].imageMobile
-                  }')`,
-                  backgroundSize: "contain",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundColor: "#050c23",
-                }}
-              />
+                  }
+                  alt={projects[selectedIdx].title}
+                  className="modal-project-img"
+                />
+              </div>
 
               {/* Right Column: Information */}
               <div className="modal-info-block">
@@ -485,6 +479,22 @@ export default function FeaturedProjects({ onRegisterClick }) {
           max-height: 90vh;
         }
 
+        /* Modal Image wrapper & image styles */
+        .modal-image-wrapper {
+          position: relative;
+          width: 100%;
+          background-color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .modal-project-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+        }
+
         /* Modal Information block */
         .modal-info-block {
           padding: 40px;
@@ -536,9 +546,12 @@ export default function FeaturedProjects({ onRegisterClick }) {
             grid-template-columns: 1fr !important;
             max-height: 90vh !important;
           }
-          .modal-grid > div:first-child {
-            height: 220px !important;
-            min-height: 220px !important;
+          .modal-image-wrapper {
+            height: auto !important;
+            min-height: auto !important;
+          }
+          .modal-project-img {
+            height: auto !important;
           }
           .modal-info-block {
             padding: 24px !important;
