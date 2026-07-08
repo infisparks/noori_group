@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 export default function FeaturedProjects({ onRegisterClick }) {
   const [activeIdx, setActiveIdx] = useState(null);
   const [selectedIdx, setSelectedIdx] = useState(null);
+  const [isModalMobile, setIsModalMobile] = useState(false);
 
   const projects = [
     {
@@ -41,11 +42,9 @@ export default function FeaturedProjects({ onRegisterClick }) {
 
       wrappers.forEach((el, index) => {
         const rect = el.getBoundingClientRect();
-        // Calculate the vertical center of this project wrapper
         const elementCenter = rect.top + rect.height / 2;
         const distance = Math.abs(elementCenter - viewportCenter);
 
-        // Active if the center of the element is within 40% of the viewport height
         if (distance < minDistance && distance < window.innerHeight * 0.4) {
           minDistance = distance;
           currentActive = index;
@@ -53,7 +52,6 @@ export default function FeaturedProjects({ onRegisterClick }) {
       });
 
       if (currentActive !== null) {
-        // Map index back to projects array (handling desktop and mobile duplicates)
         setActiveIdx(currentActive % projects.length);
       } else {
         setActiveIdx(null);
@@ -61,9 +59,20 @@ export default function FeaturedProjects({ onRegisterClick }) {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check on mount
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Monitor viewport size specifically for popup modal image rendering
+  useEffect(() => {
+    if (selectedIdx === null) return;
+    const handleModalResize = () => {
+      setIsModalMobile(window.innerWidth < 1025);
+    };
+    handleModalResize();
+    window.addEventListener("resize", handleModalResize, { passive: true });
+    return () => window.removeEventListener("resize", handleModalResize);
+  }, [selectedIdx]);
 
   return (
     <>
@@ -161,7 +170,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
                               backgroundRepeat: "no-repeat"
                             }} 
                           />
-                          {/* Centered Overlay */}
+                          {/* Centered Overlay (No filter background, button at bottom center) */}
                           <div 
                             className="project-hover-overlay"
                             style={{
@@ -169,7 +178,6 @@ export default function FeaturedProjects({ onRegisterClick }) {
                               pointerEvents: isActive ? "auto" : "none"
                             }}
                           >
-                            <h3 className="project-hover-title">{proj.title}</h3>
                             <button 
                               className="project-hover-btn" 
                               onClick={() => setSelectedIdx(idx)}
@@ -211,7 +219,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
                               backgroundRepeat: "no-repeat"
                             }} 
                           />
-                          {/* Centered Overlay */}
+                          {/* Centered Overlay (No filter background, button at bottom center) */}
                           <div 
                             className="project-hover-overlay"
                             style={{
@@ -219,7 +227,6 @@ export default function FeaturedProjects({ onRegisterClick }) {
                               pointerEvents: isActive ? "auto" : "none"
                             }}
                           >
-                            <h3 className="project-hover-title">{proj.title}</h3>
                             <button 
                               className="project-hover-btn" 
                               onClick={() => setSelectedIdx(idx)}
@@ -246,7 +253,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
           style={{
             position: "fixed",
             inset: 0,
-            backgroundColor: "rgba(5, 12, 35, 0.8)",
+            backgroundColor: "rgba(5, 12, 35, 0.7)",
             zIndex: 9999,
             display: "flex",
             alignItems: "center",
@@ -306,14 +313,18 @@ export default function FeaturedProjects({ onRegisterClick }) {
 
             {/* Modal Body Grid */}
             <div className="modal-grid">
-              {/* Left Column: Image */}
+              {/* Left Column: Image (Desktop popup shows mobile portrait, Mobile popup shows desktop landscape) */}
               <div
                 style={{
                   position: "relative",
                   width: "100%",
                   height: "100%",
                   minHeight: "300px",
-                  backgroundImage: `url('${projects[selectedIdx].imageDesktop}')`,
+                  backgroundImage: `url('${
+                    isModalMobile
+                      ? projects[selectedIdx].imageDesktop
+                      : projects[selectedIdx].imageMobile
+                  }')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -435,34 +446,22 @@ export default function FeaturedProjects({ onRegisterClick }) {
           position: relative;
         }
         
-        /* Centered Hover Overlay CSS */
+        /* Centered Hover Overlay CSS (No background tint, button at bottom center) */
         .project-hover-overlay {
           position: absolute;
           inset: 0;
-          background-color: rgba(5, 12, 35, 0.4);
+          background-color: transparent;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
-          gap: 16px;
+          justify-content: flex-end;
+          padding-bottom: 50px;
           transition: opacity 0.4s ease-in-out;
           z-index: 10;
         }
         
-        .project-hover-title {
-          font-family: 'Cinzel', serif;
-          color: #ffffff;
-          font-size: 18px;
-          letter-spacing: 1.5px;
-          margin: 0;
-          text-align: center;
-          padding: 0 16px;
-          text-transform: uppercase;
-          text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        
         .project-hover-btn {
-          background-color: transparent;
+          background-color: #050c23;
           color: #d4af37;
           border: 1px solid #d4af37;
           border-radius: 4px;
@@ -474,7 +473,7 @@ export default function FeaturedProjects({ onRegisterClick }) {
           text-transform: uppercase;
           cursor: pointer;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
         .project-hover-btn:hover {
           background-color: #d4af37;
@@ -516,8 +515,8 @@ export default function FeaturedProjects({ onRegisterClick }) {
           .noori-projects-desktop { display: none !important; }
           .noori-projects-mobile  { display: block !important; }
           
-          .project-hover-title {
-            font-size: 14px !important;
+          .project-hover-overlay {
+            padding-bottom: 40px !important;
           }
           .project-hover-btn {
             padding: 8px 18px !important;
