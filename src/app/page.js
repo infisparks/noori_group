@@ -27,7 +27,7 @@ export default function Home() {
       <AboutSection />
 
       {/* 4. Featured Projects */}
-      <FeaturedProjects />
+      <FeaturedProjects onRegisterClick={handleOpenModal} />
 
       {/* 5. Our Values Section */}
       <ValuesSection />
