@@ -25,9 +25,11 @@ export default function Home() {
       {/* 3. About Section */}
       <AboutSection />
 
-      {/* 4. Remaining page sections */}
-      <LatestLaunch />
+      {/* 4. Featured Projects */}
       <FeaturedProjects />
+
+      {/* 5. Remaining page sections */}
+      <LatestLaunch />
 
       {/* Modal */}
       <RegisterInterestModal isOpen={isModalOpen} onClose={handleCloseModal} />
