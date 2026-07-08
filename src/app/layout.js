@@ -72,6 +72,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/css/widget-icon-list.min.css" />
         <link rel="stylesheet" href="/css/style_1.css" />
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" as="style" />
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-full flex flex-col">
         {children}

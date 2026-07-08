@@ -93,13 +93,14 @@ export default function Header({ onRegisterClick }) {
                 onClick={(e) => handleNav(e, link.href)}
                 style={{
                   color: "#e2e8f0",
-                  fontSize: "13.5px",
+                  fontSize: "12.5px",
                   fontWeight: "500",
                   textDecoration: "none",
                   padding: "8px 16px",
-                  borderRadius: "6px",
-                  letterSpacing: "0.5px",
-                  fontFamily: "system-ui, sans-serif",
+                  borderRadius: "4px",
+                  letterSpacing: "1.5px",
+                  fontFamily: "'Cinzel', serif",
+                  textTransform: "uppercase",
                   transition: "all 0.2s",
                 }}
                 onMouseOver={(e) => {
@@ -120,29 +121,34 @@ export default function Header({ onRegisterClick }) {
               onClick={onRegisterClick}
               style={{
                 marginLeft: "12px",
-                padding: "10px 22px",
-                backgroundColor: "#d4af37",
-                color: "#0a1628",
-                border: "none",
-                borderRadius: "6px",
-                fontWeight: "700",
-                fontSize: "13.5px",
+                padding: "10px 24px",
+                backgroundColor: "transparent",
+                color: "#d4af37",
+                border: "1px solid #d4af37",
+                borderRadius: "4px",
+                fontWeight: "600",
+                fontSize: "12px",
                 cursor: "pointer",
-                letterSpacing: "0.3px",
-                fontFamily: "system-ui, sans-serif",
-                transition: "all 0.2s",
+                letterSpacing: "1.5px",
+                fontFamily: "'Cinzel', serif",
+                textTransform: "uppercase",
+                transition: "all 0.3s ease",
                 whiteSpace: "nowrap",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = "#c8a02e";
+                e.currentTarget.style.backgroundColor = "#d4af37";
+                e.currentTarget.style.color = "#050c23";
                 e.currentTarget.style.transform = "translateY(-1px)";
+                e.currentTarget.style.boxShadow = "0 4px 15px rgba(212, 175, 55, 0.35)";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = "#d4af37";
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#d4af37";
                 e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
-              Register Interest
+              Get in Touch
             </button>
           </nav>
 
@@ -195,12 +201,14 @@ export default function Header({ onRegisterClick }) {
                 style={{
                   display: "block",
                   color: "#e2e8f0",
-                  fontSize: "15px",
+                  fontSize: "13px",
                   fontWeight: "500",
                   textDecoration: "none",
                   padding: "12px 0",
                   borderBottom: "1px solid rgba(255,255,255,0.06)",
-                  fontFamily: "system-ui, sans-serif",
+                  letterSpacing: "1.5px",
+                  fontFamily: "'Cinzel', serif",
+                  textTransform: "uppercase",
                 }}
               >
                 {link.label}
@@ -211,18 +219,29 @@ export default function Header({ onRegisterClick }) {
               style={{
                 marginTop: "16px",
                 width: "100%",
-                padding: "14px",
-                backgroundColor: "#d4af37",
-                color: "#0a1628",
-                border: "none",
-                borderRadius: "6px",
-                fontWeight: "700",
-                fontSize: "15px",
+                padding: "12px",
+                backgroundColor: "transparent",
+                color: "#d4af37",
+                border: "1px solid #d4af37",
+                borderRadius: "4px",
+                fontWeight: "600",
+                fontSize: "13px",
                 cursor: "pointer",
-                fontFamily: "system-ui, sans-serif",
+                letterSpacing: "1.5px",
+                fontFamily: "'Cinzel', serif",
+                textTransform: "uppercase",
+                transition: "all 0.3s ease",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = "#d4af37";
+                e.currentTarget.style.color = "#050c23";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#d4af37";
               }}
             >
-              Register Interest
+              Get in Touch
             </button>
           </div>
         )}
