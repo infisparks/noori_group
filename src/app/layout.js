@@ -75,7 +75,6 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col">
         {children}
-        <script async="true" src="/js/gtm.js" />
         <script  dangerouslySetInnerHTML={{ __html: `
         // Add loaded class once DOM is ready
         document.addEventListener("DOMContentLoaded", function() {
@@ -108,11 +107,6 @@ var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":
     'siteDomain': window.location.hostname
   });
 ` }} />
-        <script  dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T7D7R3R');` }} />
         <script id="sc-script" src="/js/__translator.js" />
         <script  dangerouslySetInnerHTML={{ __html: `                                                                                                                                
   if ('serviceWorker' in navigator) {                                                                                                     
