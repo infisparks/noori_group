@@ -208,6 +208,7 @@ export default function AboutSection() {
           style={{
             position: "relative",
             width: "100%",
+            maxWidth: "350px",
             display: "flex",
             justifyContent: "center",
           }}
@@ -218,9 +219,8 @@ export default function AboutSection() {
               position: "absolute",
               top: "15px",
               left: "15px",
-              width: "100%",
-              maxWidth: "350px",
-              aspectRatio: "1/1",
+              right: "-15px",
+              bottom: "-15px",
               border: "1px solid #d4af37",
               borderRadius: "4px",
               zIndex: 1,
@@ -232,8 +232,6 @@ export default function AboutSection() {
             style={{
               position: "relative",
               width: "100%",
-              maxWidth: "350px",
-              aspectRatio: "1/1",
               backgroundColor: "#f7fafc",
               borderRadius: "4px",
               boxShadow: "0 15px 30px rgba(0,0,0,0.06)",
@@ -252,8 +250,7 @@ export default function AboutSection() {
               }}
               style={{
                 width: "100%",
-                height: "100%",
-                objectFit: "cover",
+                height: "auto",
                 display: "block",
               }}
             />
@@ -261,7 +258,7 @@ export default function AboutSection() {
             <div
               style={{
                 width: "100%",
-                height: "100%",
+                aspectRatio: "1/1",
                 display: "none",
                 flexDirection: "column",
                 alignItems: "center",
