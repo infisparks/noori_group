@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Header from "@/components/Header";
-import LatestLaunch from "@/components/LatestLaunch";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import HeroBanner from "@/components/HeroBanner";
 import AboutSection from "@/components/AboutSection";
@@ -35,9 +34,6 @@ export default function Home() {
 
       {/* 6. On-Going Projects Section */}
       <OngoingProjects onRegisterClick={handleOpenModal} />
-
-      {/* 7. Remaining page sections */}
-      <LatestLaunch />
 
       {/* Modal */}
       <RegisterInterestModal isOpen={isModalOpen} onClose={handleCloseModal} />
