@@ -6,6 +6,7 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import HeroBanner from "@/components/HeroBanner";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
+import OngoingProjects from "@/components/OngoingProjects";
 import RegisterInterestModal from "@/components/RegisterInterestModal";
 
 export default function Home() {
@@ -32,7 +33,10 @@ export default function Home() {
       {/* 5. Our Values Section */}
       <ValuesSection />
 
-      {/* 6. Remaining page sections */}
+      {/* 6. On-Going Projects Section */}
+      <OngoingProjects onRegisterClick={handleOpenModal} />
+
+      {/* 7. Remaining page sections */}
       <LatestLaunch />
 
       {/* Modal */}

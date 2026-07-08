@@ -17,19 +17,25 @@ export default function Header({ onRegisterClick }) {
     const onScroll = () => {
       setScrolled(window.scrollY > 60);
 
-      // Check if we've reached the OUR PROJECTS section
+      // Check if we've reached the OUR PROJECTS or ON-GOING PROJECTS sections
       const projectsEl = document.getElementById("featured-projects");
+      const ongoingEl = document.getElementById("ongoing-projects");
+      let shouldHide = false;
+
       if (projectsEl) {
         const rect = projectsEl.getBoundingClientRect();
-        // If the top of the projects section is at or above the viewport top
-        if (rect.top <= 80) {
-          setShowHeader(false);
-        } else {
-          setShowHeader(true);
+        if (rect.top <= 80 && rect.bottom >= 0) {
+          shouldHide = true;
         }
-      } else {
-        setShowHeader(true);
       }
+      if (ongoingEl) {
+        const rect = ongoingEl.getBoundingClientRect();
+        if (rect.top <= 80 && rect.bottom >= 0) {
+          shouldHide = true;
+        }
+      }
+
+      setShowHeader(!shouldHide);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
