@@ -127,7 +127,7 @@ export default function AboutSection() {
             }}
           >
             <img
-              src="/images/founder/founder.png"
+              src="/images/founder/founder.jpg"
               alt="Farid Zariwala - Founder of Noori Group"
               onError={(e) => {
                 e.currentTarget.style.display = "none";

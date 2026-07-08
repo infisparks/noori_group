@@ -24,7 +24,7 @@ export default function HeroBanner({ onRegisterClick }) {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/images/building/PC VERSION/HEROSECTION.png')",
+            backgroundImage: "url('/images/building/PC VERSION/HEROSECTION.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "left center",
             backgroundRepeat: "no-repeat",
@@ -130,7 +130,7 @@ export default function HeroBanner({ onRegisterClick }) {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/images/building/mobile version/HEROSECTION.png')",
+            backgroundImage: "url('/images/building/mobile version/HEROSECTION.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center top",
             backgroundRepeat: "no-repeat",

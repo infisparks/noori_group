@@ -84,7 +84,7 @@ export default function FeaturedProjects() {
                       <div 
                         className="featured-background-desktop pageBlock" 
                         style={{ 
-                          backgroundImage: "url('/images/building/PC VERSION/NOORIGEIGHT.png')",
+                          backgroundImage: "url('/images/building/PC VERSION/NOORIGEIGHT.jpg')",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat"
@@ -95,7 +95,7 @@ export default function FeaturedProjects() {
                       <div 
                         className="featured-background-desktop pageBlock" 
                         style={{ 
-                          backgroundImage: "url('/images/building/PC VERSION/BELLAVISTA.png')",
+                          backgroundImage: "url('/images/building/PC VERSION/BELLAVISTA.jpg')",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat"
@@ -106,7 +106,7 @@ export default function FeaturedProjects() {
                       <div 
                         className="featured-background-desktop pageBlock" 
                         style={{ 
-                          backgroundImage: "url('/images/building/PC VERSION/BLUEBELLS.png')",
+                          backgroundImage: "url('/images/building/PC VERSION/BLUEBELLS.jpg')",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat"
@@ -131,7 +131,7 @@ export default function FeaturedProjects() {
                       <div 
                         className="featured-background-mobile pageBlock" 
                         style={{ 
-                          backgroundImage: "url('/images/building/mobile version/nooriheight.png')",
+                          backgroundImage: "url('/images/building/mobile version/nooriheight.jpg')",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat"
@@ -142,7 +142,7 @@ export default function FeaturedProjects() {
                       <div 
                         className="featured-background-mobile pageBlock" 
                         style={{ 
-                          backgroundImage: "url('/images/building/mobile version/bellavista.png')",
+                          backgroundImage: "url('/images/building/mobile version/bellavista.jpg')",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat"
@@ -153,7 +153,7 @@ export default function FeaturedProjects() {
                       <div 
                         className="featured-background-mobile pageBlock" 
                         style={{ 
-                          backgroundImage: "url('/images/building/mobile version/bluebells.png')",
+                          backgroundImage: "url('/images/building/mobile version/bluebells.jpg')",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat"
