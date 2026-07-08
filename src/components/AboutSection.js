@@ -17,7 +17,7 @@ export default function AboutSection() {
       id="about"
       style={{
         backgroundColor: "#ffffff",
-        padding: isMobile ? "40px 0" : "60px 0",
+        padding: isMobile ? "30px 0" : "50px 0",
         width: "100%",
         overflow: "hidden",
       }}
@@ -29,13 +29,24 @@ export default function AboutSection() {
           margin: "0 auto",
           padding: "0 48px",
           display: "grid",
-          gridTemplateColumns: "1.15fr 0.85fr",
-          gap: "50px",
-          alignItems: "center",
+          gridTemplateColumns: isMobile ? "1fr" : "1.15fr 0.85fr",
+          gridTemplateAreas: isMobile
+            ? "none"
+            : '"header image" "text image"',
+          rowGap: isMobile ? "20px" : "24px",
+          columnGap: "50px",
+          alignItems: "start",
         }}
       >
-        {/* Left Side: Professional Text Content */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        {/* 1. Header Area (Top Left on PC, Top on Mobile) */}
+        <div
+          style={{
+            gridArea: isMobile ? "auto" : "header",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+          }}
+        >
           {/* Subtitle Accent */}
           <div
             style={{
@@ -50,14 +61,14 @@ export default function AboutSection() {
             Our Legacy & Leadership
           </div>
 
-          {/* Main Heading */}
+          {/* Main Heading (Split into 2 distinct rows) */}
           <h2
             style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "30px",
+              fontSize: isMobile ? "24px" : "30px",
               fontWeight: "400",
               color: "#0a1628",
-              lineHeight: "1.25",
+              lineHeight: "1.3",
               letterSpacing: "1px",
               margin: 0,
             }}
@@ -74,17 +85,119 @@ export default function AboutSection() {
               backgroundColor: "#d4af37",
             }}
           />
+        </div>
 
+        {/* 2. Image Area (Right on PC, Middle on Mobile) */}
+        <div
+          style={{
+            gridArea: isMobile ? "auto" : "image",
+            position: "relative",
+            width: "100%",
+            maxWidth: isMobile ? "280px" : "350px",
+            margin: isMobile ? "10px auto 20px" : "0 auto",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {/* Gold Decorative offset border behind the image */}
+          <div
+            style={{
+              position: "absolute",
+              top: "12px",
+              left: "12px",
+              right: "-12px",
+              bottom: "-12px",
+              border: "1px solid #d4af37",
+              borderRadius: "4px",
+              zIndex: 1,
+            }}
+          />
+
+          {/* Main Image Frame */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              backgroundColor: "#f7fafc",
+              borderRadius: "4px",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.05)",
+              overflow: "hidden",
+              zIndex: 2,
+              border: "1px solid #e2e8f0",
+            }}
+          >
+            <img
+              src="/images/founder/founder.png"
+              alt="Farid Zariwala - Founder of Noori Group"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+                e.currentTarget.nextSibling.style.display = "flex";
+              }}
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+              }}
+            />
+            {/* Fallback Placeholder (displayed only when founder.png fails to load) */}
+            <div
+              style={{
+                width: "100%",
+                aspectRatio: "1/1",
+                display: "none",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "linear-gradient(135deg, #0a1628 0%, #152942 100%)",
+                padding: "24px",
+                color: "#ffffff",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "18px",
+                  color: "#d4af37",
+                  marginBottom: "8px",
+                }}
+              >
+                Noori Group
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: "10px",
+                  letterSpacing: "1px",
+                  color: "#cbd5e1",
+                  textTransform: "uppercase",
+                }}
+              >
+                Founder & Director
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Text Content Area (Bottom Left on PC, Bottom on Mobile) */}
+        <div
+          style={{
+            gridArea: isMobile ? "auto" : "text",
+            display: "flex",
+            flexDirection: "column",
+            gap: "14px",
+          }}
+        >
           {/* Body Content */}
           <div
             style={{
               fontFamily: "'Montserrat', sans-serif",
               fontSize: "14px",
               color: "#4a5568",
-              lineHeight: "1.65",
+              lineHeight: "1.6",
               display: "flex",
               flexDirection: "column",
-              gap: "14px",
+              gap: "12px",
               fontWeight: "300",
             }}
           >
@@ -122,11 +235,11 @@ export default function AboutSection() {
               border: "none",
               color: "#d4af37",
               fontFamily: "'Cinzel', serif",
-              fontSize: "12px",
+              fontSize: "11px",
               fontWeight: "600",
               letterSpacing: "1.5px",
               cursor: "pointer",
-              padding: "4px 0",
+              padding: "2px 0",
               display: "flex",
               alignItems: "center",
               gap: "6px",
@@ -143,17 +256,17 @@ export default function AboutSection() {
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
-              gap: "20px",
-              marginTop: "8px",
+              gap: "16px",
+              marginTop: "4px",
               borderTop: "1px solid #f0f0f0",
-              paddingTop: "16px",
+              paddingTop: "12px",
             }}
           >
-            <div style={{ borderLeft: "2px solid #d4af37", paddingLeft: "12px" }}>
+            <div style={{ borderLeft: "2px solid #d4af37", paddingLeft: "10px" }}>
               <div
                 style={{
                   fontFamily: "'Cinzel', serif",
-                  fontSize: "14px",
+                  fontSize: "13px",
                   fontWeight: "600",
                   color: "#0a1628",
                   marginBottom: "2px",
@@ -164,7 +277,7 @@ export default function AboutSection() {
               <div
                 style={{
                   fontFamily: "'Montserrat', sans-serif",
-                  fontSize: "10px",
+                  fontSize: "9px",
                   color: "#d4af37",
                   fontWeight: "600",
                   textTransform: "uppercase",
@@ -175,11 +288,11 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div style={{ borderLeft: "2px solid #0a1628", paddingLeft: "12px" }}>
+            <div style={{ borderLeft: "2px solid #0a1628", paddingLeft: "10px" }}>
               <div
                 style={{
                   fontFamily: "'Cinzel', serif",
-                  fontSize: "14px",
+                  fontSize: "13px",
                   fontWeight: "600",
                   color: "#0a1628",
                   marginBottom: "2px",
@@ -190,7 +303,7 @@ export default function AboutSection() {
               <div
                 style={{
                   fontFamily: "'Montserrat', sans-serif",
-                  fontSize: "10px",
+                  fontSize: "9px",
                   color: "#0a1628",
                   fontWeight: "600",
                   textTransform: "uppercase",
@@ -202,105 +315,12 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-
-        {/* Right Side: Compact Square Image Container */}
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: "350px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          {/* Gold Decorative offset border behind the image */}
-          <div
-            style={{
-              position: "absolute",
-              top: "15px",
-              left: "15px",
-              right: "-15px",
-              bottom: "-15px",
-              border: "1px solid #d4af37",
-              borderRadius: "4px",
-              zIndex: 1,
-            }}
-          />
-
-          {/* Main Image Frame */}
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              backgroundColor: "#f7fafc",
-              borderRadius: "4px",
-              boxShadow: "0 15px 30px rgba(0,0,0,0.06)",
-              overflow: "hidden",
-              zIndex: 2,
-              border: "1px solid #e2e8f0",
-            }}
-          >
-            <img
-              src="/images/founder/founder.png"
-              alt="Farid Zariwala - Founder of Noori Group"
-              onError={(e) => {
-                // If founder.png fails to load, show a styled placeholder
-                e.currentTarget.style.display = "none";
-                e.currentTarget.nextSibling.style.display = "flex";
-              }}
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-              }}
-            />
-            {/* Fallback Placeholder (displayed only when founder.png fails to load) */}
-            <div
-              style={{
-                width: "100%",
-                aspectRatio: "1/1",
-                display: "none",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "linear-gradient(135deg, #0a1628 0%, #152942 100%)",
-                padding: "24px",
-                color: "#ffffff",
-                textAlign: "center",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'Cinzel', serif",
-                  fontSize: "20px",
-                  color: "#d4af37",
-                  marginBottom: "8px",
-                }}
-              >
-                Noori Group
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: "11px",
-                  letterSpacing: "1px",
-                  color: "#cbd5e1",
-                  textTransform: "uppercase",
-                }}
-              >
-                Founder & Director
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Responsive Breakpoints CSS */}
       <style>{`
         @media (max-width: 991px) {
           .about-container {
-            grid-template-columns: 1fr !important;
-            gap: 40px !important;
             padding: 0 24px !important;
           }
         }
