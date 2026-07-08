@@ -65,7 +65,7 @@ export default function AboutSection() {
           <h2
             style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: isMobile ? "24px" : "30px",
+              fontSize: isMobile ? "18px" : "30px",
               fontWeight: "400",
               color: "#0a1628",
               lineHeight: "1.3",
