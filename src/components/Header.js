@@ -11,9 +11,26 @@ const NAV_LINKS = [
 export default function Header({ onRegisterClick }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+
+      // Check if we've reached the OUR PROJECTS section
+      const projectsEl = document.getElementById("featured-projects");
+      if (projectsEl) {
+        const rect = projectsEl.getBoundingClientRect();
+        // If the top of the projects section is at or above the viewport top
+        if (rect.top <= 80) {
+          setShowHeader(false);
+        } else {
+          setShowHeader(true);
+        }
+      } else {
+        setShowHeader(true);
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -48,7 +65,9 @@ export default function Header({ onRegisterClick }) {
           background: headerBg,
           borderBottom: headerBorder,
           boxShadow: headerShadow,
-          transition: "background 0.35s ease, box-shadow 0.35s ease",
+          transform: showHeader ? "translateY(0)" : "translateY(-100%)",
+          opacity: showHeader ? 1 : 0,
+          transition: "background 0.35s ease, box-shadow 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease",
           backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
       >
