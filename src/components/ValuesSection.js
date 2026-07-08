@@ -129,31 +129,12 @@ export default function ValuesSection() {
           to come.
         </p>
 
-        {/* Values 3-Column Grid */}
-        <div
-          className="values-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "24px 30px",
-            width: "100%",
-            marginTop: "10px",
-          }}
-        >
+        {/* Values Responsive Grid / Slidable Container */}
+        <div className="values-grid">
           {values.map((val, idx) => (
             <div
               key={idx}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px",
-                padding: "16px 20px",
-                backgroundColor: "#fcfdfe",
-                border: "1px solid #f3f4f6",
-                borderRadius: "6px",
-                transition: "all 0.3s ease",
-                boxShadow: "0 2px 10px rgba(0, 0, 0, 0.01)",
-              }}
+              className="value-card"
               onMouseOver={(e) => {
                 e.currentTarget.style.borderColor = "#d4af37";
                 e.currentTarget.style.transform = "translateY(-2px)";
@@ -217,14 +198,56 @@ export default function ValuesSection() {
 
       {/* Responsive Breakpoints CSS */}
       <style>{`
+        /* Desktop styles (grid) */
+        .values-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 24px 30px;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .value-card {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding: 16px 20px;
+          background-color: #fcfdfe;
+          border: 1px solid #f3f4f6;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.01);
+        }
+
+        /* Mobile / Tablet horizontal scroll */
         @media (max-width: 767px) {
           .values-container {
-            padding: 0 24px !important;
-            gap: 25px !important;
+            padding: 0 16px !important;
+            gap: 20px !important;
           }
           .values-grid {
-            grid-template-columns: 1fr !important;
+            display: flex !important;
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
             gap: 16px !important;
+            padding: 10px 4px 15px !important; 
+            margin-top: 5px !important;
+            width: 100% !important;
+          }
+          .value-card {
+            flex-shrink: 0 !important;
+            width: 280px !important;
+            scroll-snap-align: start !important;
+          }
+          /* Hide scrollbar for Chrome, Safari and Opera */
+          .values-grid::-webkit-scrollbar {
+            display: none;
+          }
+          /* Hide scrollbar for IE, Edge and Firefox */
+          .values-grid {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
           }
         }
       `}</style>
