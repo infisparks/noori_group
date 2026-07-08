@@ -328,8 +328,10 @@ export default function FeaturedProjects({ onRegisterClick }) {
                       ? projects[selectedIdx].imageDesktop
                       : projects[selectedIdx].imageMobile
                   }')`,
-                  backgroundSize: "cover",
+                  backgroundSize: "contain",
                   backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundColor: "#050c23",
                 }}
               />
 
