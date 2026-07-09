@@ -15,6 +15,8 @@ export default function OngoingProjects({ onRegisterClick }) {
         "Noori Horizon represents the pinnacle of modern architecture and luxury living. Strategically located to offer seamless connectivity, this premium residential project features beautifully designed homes with stunning panoramic views of the surrounding hills and cityscape. Equipped with top-tier amenities, spacious layouts, and green open spaces, Noori Horizon is crafted to elevate the everyday living experience. With close proximity to essential educational institutions, healthcare centers, and shopping hubs, it provides a perfect blend of comfort, luxury, and convenience for your family.",
       imageDesktop: "/images/building/PC VERSION/noorihorizon.jpg",
       imageMobile: "/images/building/mobile version/noorihorizon.jpg",
+      backgroundPositionMobile: "left",
+      backgroundPositionDesktop: "left",
     },
     {
       title: "Rehabilitation Building",
@@ -169,7 +171,7 @@ export default function OngoingProjects({ onRegisterClick }) {
                           style={{ 
                             backgroundImage: `url('${proj.imageDesktop}')`,
                             backgroundSize: "cover",
-                            backgroundPosition: "center",
+                            backgroundPosition: proj.backgroundPositionDesktop || "center",
                             backgroundRepeat: "no-repeat"
                           }} 
                         />
@@ -209,7 +211,7 @@ export default function OngoingProjects({ onRegisterClick }) {
                           style={{ 
                             backgroundImage: `url('${proj.imageMobile}')`,
                             backgroundSize: "cover",
-                            backgroundPosition: "center",
+                            backgroundPosition: proj.backgroundPositionMobile || "center",
                             backgroundRepeat: "no-repeat"
                           }} 
                         />
