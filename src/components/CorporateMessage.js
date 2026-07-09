@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 export default function CorporateMessage() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 991);
@@ -99,15 +100,53 @@ export default function CorporateMessage() {
             <p style={{ margin: 0 }}>
               At the heart of our endeavours lies the aspiration to provide not just houses, but homes where dreams are nurtured and futures are built. We understand that homeownership is not just a transaction; it’s an aspiration, a symbol of progress, and a sanctuary for families. Our dedication to this cause has enabled us to bring happiness to countless lives, and it continues to drive us forward.
             </p>
-            <p style={{ margin: 0 }}>
-              We aim to upscale the development of Mumbai and its suburbs by not only constructing buildings but by crafting communities that thrive. We envision a future where our projects contribute to the growth, sustainability, and inclusivity of this great city.
-            </p>
-            <p style={{ margin: 0 }}>
-              In the pursuit of our goals, we remain resolute in our commitment to innovation, quality, and customer satisfaction. Together, we will create not just structures but enduring legacies, enriching the lives of those we serve.
-            </p>
-            <p style={{ margin: 0, fontWeight: "500", color: "#ffffff" }}>
-              Thank you for your trust in Noori Group of Companies. With your continued support, we will keep building dreams.
-            </p>
+
+            {isExpanded && (
+              <div 
+                style={{ 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  gap: "14px",
+                  animation: "fadeInText 0.4s ease-in-out" 
+                }}
+              >
+                <p style={{ margin: 0 }}>
+                  We aim to upscale the development of Mumbai and its suburbs by not only constructing buildings but by crafting communities that thrive. We envision a future where our projects contribute to the growth, sustainability, and inclusivity of this great city.
+                </p>
+                <p style={{ margin: 0 }}>
+                  In the pursuit of our goals, we remain resolute in our commitment to innovation, quality, and customer satisfaction. Together, we will create not just structures but enduring legacies, enriching the lives of those we serve.
+                </p>
+                <p style={{ margin: 0, fontWeight: "500", color: "#ffffff" }}>
+                  Thank you for your trust in Noori Group of Companies. With your continued support, we will keep building dreams.
+                </p>
+              </div>
+            )}
+
+            {/* Read More / Read Less CTA */}
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              style={{
+                alignSelf: "flex-start",
+                backgroundColor: "transparent",
+                border: "none",
+                color: "#d4af37",
+                fontFamily: "'Cinzel', serif",
+                fontSize: "11px",
+                fontWeight: "600",
+                letterSpacing: "1.5px",
+                cursor: "pointer",
+                padding: "4px 0",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                transition: "color 0.2s ease",
+                marginTop: "4px"
+              }}
+              onMouseOver={(e) => (e.currentTarget.style.color = "#ffffff")}
+              onMouseOut={(e) => (e.currentTarget.style.color = "#d4af37")}
+            >
+              {isExpanded ? "READ LESS —" : "READ MORE +"}
+            </button>
           </div>
         </div>
 
@@ -233,6 +272,16 @@ export default function CorporateMessage() {
 
 const styleMobileQuery = (
   <style>{`
+    @keyframes fadeInText {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     @media (max-width: 991px) {
       .corporate-message-container {
         padding: 0 24px !important;
