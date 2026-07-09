@@ -9,12 +9,12 @@ export default function OngoingProjects({ onRegisterClick }) {
 
   const projects = [
     {
-      title: "Noori Enclave (SRA Project)",
-      subtitle: "SV Road, Bandra West (32 Stories)",
+      title: "Noori Horizon",
+      subtitle: "Premium Residential Landmark (Mumbra)",
       description:
-        "Noori Enclave, a magnificent 32-story tower in Bandra West, graces the prime location of SV Road. This impressive project offers residents breathtaking views of the Arabian Sea and the vibrant Mumbai cityscape. With a myriad of amenities, including a podium, clubhouse, and a dedicated library, Noori Enclave is designed to enrich the lives of its residents. Notably, it also serves as an SRA (Slum Rehabilitation Authority) project, demonstrating the builder’s commitment to community development. Additionally, the provision of a separate 18-story building for tenants underscores the builder’s dedication to creating an inclusive and thriving community within this iconic urban enclave.",
-      imageDesktop: "/images/building/PC VERSION/noorienclave.jpg",
-      imageMobile: "/images/building/mobile version/noorienclave.jpg",
+        "Noori Horizon represents the pinnacle of modern architecture and luxury living. Strategically located to offer seamless connectivity, this premium residential project features beautifully designed homes with stunning panoramic views of the surrounding hills and cityscape. Equipped with top-tier amenities, spacious layouts, and green open spaces, Noori Horizon is crafted to elevate the everyday living experience. With close proximity to essential educational institutions, healthcare centers, and shopping hubs, it provides a perfect blend of comfort, luxury, and convenience for your family.",
+      imageDesktop: "/images/building/PC VERSION/noorihorizon.jpg",
+      imageMobile: "/images/building/mobile version/noorihorizon.jpg",
     },
     {
       title: "Rehabilitation Building",
@@ -31,14 +31,6 @@ export default function OngoingProjects({ onRegisterClick }) {
         "Noori Crest project encompasses the development of a 7-storey residential cum commercial tower strategically situated off the bustling Mumbra bypass. Nestled within a serene and respectable neighborhood, the tower boasts a picturesque backdrop of majestic mountains and lush greenery, offering residents a tranquil and refreshing living environment. The location’s prime advantage lies in its proximity to esteemed educational institutions and top-notch medical facilities, ensuring a convenient and holistic lifestyle for families.",
       imageDesktop: "/images/building/PC VERSION/nooricrest.jpg",
       imageMobile: "/images/building/mobile version/nooricrest.jpg",
-    },
-    {
-      title: "Noori Mirage (SRA Project)",
-      subtitle: "Chirag Nagar, Thane City (36 Stories)",
-      description:
-        "Noori Mirage, a striking 36-story tower, graces the heart of Thane City in Chirag Nagar. This project represents the thoughtful redevelopment of the Aai Ambabai Society, offering residents and tenants a taste of luxurious urban living. With its soaring height, Noori Mirage not only provides stunning views of the city but also serves as a symbol of modern elegance in the neighborhood. The project embodies a harmonious blend of contemporary design and comfort, redefining the living standards for its fortunate occupants. Its prime location ensures easy access to all the conveniences and attractions that Thane City has to offer, making Noori Mirage an ideal choice for those seeking a premium urban lifestyle.",
-      imageDesktop: "/images/building/PC VERSION/noorimirage.jpg",
-      imageMobile: "/images/building/mobile version/noorimirage.jpg",
     },
   ];
 
