@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { db, ref, push } from "@/lib/firebase";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,15 +12,17 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setSubmitting(true);
 
     // Simple validation
     if (
@@ -29,11 +32,24 @@ export default function ContactForm() {
       !formData.email
     ) {
       setError("Please fill in all required fields marked with *");
+      setSubmitting(false);
       return;
     }
 
-    console.log("Form Submitted:", formData);
-    setSubmitted(true);
+    try {
+      const leadsRef = ref(db, "leads");
+      await push(leadsRef, {
+        ...formData,
+        createdAt: new Date().toISOString(),
+      });
+      console.log("Form Submitted to Firebase:", formData);
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Firebase submit error:", err);
+      setError("Failed to register your interest. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -135,9 +151,10 @@ export default function ContactForm() {
       <div>
         <button
           type="submit"
-          className="w-full py-3 bg-[#0a1628] hover:bg-[#d4af37] text-white hover:text-[#050c23] font-semibold text-sm rounded-lg transition-all duration-300 shadow-sm cursor-pointer"
+          disabled={submitting}
+          className="w-full py-3 bg-[#0a1628] hover:bg-[#d4af37] disabled:bg-gray-400 disabled:text-gray-200 text-white hover:text-[#050c23] font-semibold text-sm rounded-lg transition-all duration-300 shadow-sm cursor-pointer"
         >
-          Submit
+          {submitting ? "Submitting..." : "Submit"}
         </button>
       </div>
     </form>

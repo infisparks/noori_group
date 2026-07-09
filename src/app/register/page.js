@@ -117,6 +117,31 @@ export default function RegisterPage() {
                 Email: info@noorigroupofcompanies.com
               </div>
             </div>
+
+            {/* Embedded Google Map */}
+            <div
+              style={{
+                marginTop: "12px",
+                position: "relative",
+                width: "100%",
+                height: "260px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                border: "1px solid rgba(212,175,55,0.3)",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
+              }}
+            >
+              <iframe
+                src="https://maps.google.com/maps?q=306/307,%20Madhava,%20BKC,%20Bandra%20East,%20Mumbai%20-%20400051&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Noori Group BKC Office Map"
+              ></iframe>
+            </div>
           </div>
 
           {/* Right Column: Premium Form Card */}
