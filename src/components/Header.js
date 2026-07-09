@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "#featured-projects" },
-  { label: "About", href: "#about" },
+  { label: "Projects", href: "/#featured-projects" },
+  { label: "About", href: "/#about" },
   { label: "Contact Us", href: "/register" },
 ];
 
@@ -54,9 +54,11 @@ export default function Header({ onRegisterClick, isDarkText }) {
   }, []);
 
   const handleNav = (e, href) => {
-    if (href.startsWith("#")) {
+    const isHome = typeof window !== "undefined" && window.location.pathname === "/";
+    if (isHome && href.startsWith("/#")) {
       e.preventDefault();
-      const el = document.getElementById(href.slice(1));
+      const targetId = href.split("#")[1];
+      const el = document.getElementById(targetId);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }
     setMobileOpen(false);

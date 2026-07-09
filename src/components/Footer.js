@@ -43,10 +43,7 @@ export default function Footer({ onRegisterClick }) {
           <div className="footer-col links-col">
             <h4 className="col-title">Quick Links</h4>
             <ul className="footer-links-list">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#projects">Featured Projects</a></li>
-              <li><a href="#mission-vision">Our Mission</a></li>
-              <li><a href="#ventures">Other Ventures</a></li>
+              <li><a href="/">Home</a></li>
             </ul>
           </div>
 
