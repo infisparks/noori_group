@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://www.noorigroupofcompanies.com"),
+  metadataBase: new URL("https://noori-group.vercel.app"),
   title: "Leading Real Estate Developer in Mumbai | Noori Group of Companies",
   description: "Noori Group of Companies, a trusted Real Estate Developer in Mumbai since 1987, offers premium properties and sustainable communities.",
   openGraph: {
@@ -20,7 +20,7 @@ export const metadata = {
     description: "Noori Group of Companies, a trusted Real Estate Developer in Mumbai since 1987, offers premium properties and sustainable communities.",
     images: [
       {
-        url: "https://www.noorigroupofcompanies.com/images/building/thumbnail.jpg",
+        url: "https://noori-group.vercel.app/images/building/thumbnail.jpg",
         width: 800,
         height: 533,
         alt: "Noori Group of Companies Portfolio",
@@ -32,7 +32,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Leading Real Estate Developer in Mumbai | Noori Group of Companies",
     description: "Noori Group of Companies, a trusted Real Estate Developer in Mumbai since 1987, offers premium properties and sustainable communities.",
-    images: ["https://www.noorigroupofcompanies.com/images/building/thumbnail.jpg"],
+    images: ["https://noori-group.vercel.app/images/building/thumbnail.jpg"],
   },
 };
 
