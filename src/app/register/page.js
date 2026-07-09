@@ -16,7 +16,7 @@ export default function RegisterPage() {
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", backgroundColor: "#fcfdfd" }}>
       {/* Premium Navigation Header */}
-      <Header onRegisterClick={handleOpenModal} />
+      <Header onRegisterClick={handleOpenModal} isDarkText={true} />
 
       {/* Main Registration Content Box */}
       <main style={{ flex: 1, paddingTop: "120px", paddingBottom: "80px" }}>

@@ -8,10 +8,22 @@ const NAV_LINKS = [
   { label: "Contact Us", href: "/register" },
 ];
 
-export default function Header({ onRegisterClick }) {
+export default function Header({ onRegisterClick, isDarkText }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
+
+  const logoSrc = (isDarkText && !scrolled)
+    ? "/images/building/logo/blue-logo.png"
+    : "/images/building/logo/g-logo.png";
+
+  const navTextColor = (isDarkText && !scrolled)
+    ? "#0a1628"
+    : "#e2e8f0";
+
+  const hamburgerColor = (isDarkText && !scrolled)
+    ? "#0a1628"
+    : "#ffffff";
 
   useEffect(() => {
     const onScroll = () => {
@@ -91,13 +103,13 @@ export default function Header({ onRegisterClick }) {
           {/* ── Logo ── */}
           <a href="/" style={{ display: "block", flexShrink: 0 }}>
             <img
-              src="/images/building/logo/g-logo.png"
+              src={logoSrc}
               alt="Noori Group of Companies"
               style={{
                 height: "48px",
                 width: "auto",
                 display: "block",
-                filter: "brightness(1.05)",
+                filter: scrolled ? "brightness(1.05)" : "none",
               }}
             />
           </a>
@@ -117,7 +129,7 @@ export default function Header({ onRegisterClick }) {
                 href={link.href}
                 onClick={(e) => handleNav(e, link.href)}
                 style={{
-                  color: "#e2e8f0",
+                  color: navTextColor,
                   fontSize: "12.5px",
                   fontWeight: "500",
                   textDecoration: "none",
@@ -133,7 +145,7 @@ export default function Header({ onRegisterClick }) {
                   e.currentTarget.style.background = "rgba(212,175,55,0.08)";
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.color = "#e2e8f0";
+                  e.currentTarget.style.color = navTextColor;
                   e.currentTarget.style.background = "transparent";
                 }}
               >
@@ -188,7 +200,7 @@ export default function Header({ onRegisterClick }) {
               border: "none",
               cursor: "pointer",
               padding: "8px",
-              color: "#ffffff",
+              color: hamburgerColor,
             }}
           >
             {mobileOpen ? (
