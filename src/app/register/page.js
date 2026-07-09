@@ -20,20 +20,10 @@ export default function RegisterPage() {
 
       {/* Main Registration Content Box */}
       <main style={{ flex: 1, paddingTop: "120px", paddingBottom: "80px" }}>
-        <div
-          className="register-page-container"
-          style={{
-            maxWidth: "1320px",
-            margin: "0 auto",
-            padding: "0 48px",
-            display: "grid",
-            gridTemplateColumns: "1.1fr 0.9fr",
-            columnGap: "80px",
-            alignItems: "center",
-          }}
-        >
-          {/* Left Column: Premium Text & Contact Info */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+        <div className="register-grid-container">
+          
+          {/* 1. Intro Block */}
+          <div className="register-intro-block" style={{ gridArea: "intro", display: "flex", flexDirection: "column", gap: "24px" }}>
             <div
               style={{
                 fontFamily: "'Montserrat', sans-serif",
@@ -81,73 +71,13 @@ export default function RegisterPage() {
             >
               Enter your details to receive priority booking updates, exclusive launch price structures, brochures, and layout maps for Noori Group's luxury developments.
             </p>
-
-            {/* HQ Coordinates Card */}
-            <div
-              style={{
-                borderLeft: "2px solid #d4af37",
-                paddingLeft: "20px",
-                marginTop: "10px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'Cinzel', serif",
-                  fontSize: "15px",
-                  fontWeight: "600",
-                  color: "#0a1628",
-                }}
-              >
-                Noori Group Corporate HQ
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: "13.5px",
-                  color: "#6b7280",
-                  lineHeight: "1.5",
-                  fontWeight: "300",
-                }}
-              >
-                306/307, Madhava, E Block, <br />
-                BKC, Bandra East, Mumbai - 400051 <br />
-                Email: info@noorigroupofcompanies.com
-              </div>
-            </div>
-
-            {/* Embedded Google Map */}
-            <div
-              style={{
-                marginTop: "12px",
-                position: "relative",
-                width: "100%",
-                height: "260px",
-                borderRadius: "8px",
-                overflow: "hidden",
-                border: "1px solid rgba(212,175,55,0.3)",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
-              }}
-            >
-              <iframe
-                src="https://maps.google.com/maps?q=306/307,%20Madhava,%20BKC,%20Bandra%20East,%20Mumbai%20-%20400051&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Noori Group BKC Office Map"
-              ></iframe>
-            </div>
           </div>
 
-          {/* Right Column: Premium Form Card */}
+          {/* 2. Form Block */}
           <div
             id="register-form-container"
             style={{
+              gridArea: "form",
               position: "relative",
               width: "100%",
             }}
@@ -194,19 +124,103 @@ export default function RegisterPage() {
               <ContactForm />
             </div>
           </div>
+
+          {/* 3. Info Block */}
+          <div className="register-info-block" style={{ gridArea: "info", display: "flex", flexDirection: "column", gap: "24px" }}>
+            {/* HQ Coordinates Card */}
+            <div
+              style={{
+                borderLeft: "2px solid #d4af37",
+                paddingLeft: "20px",
+                marginTop: "10px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: "15px",
+                  fontWeight: "600",
+                  color: "#0a1628",
+                }}
+              >
+                Noori Group Corporate HQ
+              </div>
+              <div
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: "13.5px",
+                  color: "#6b7280",
+                  lineHeight: "1.5",
+                  fontWeight: "300",
+                }}
+              >
+                306/307, Madhava, E Block, <br />
+                BKC, Bandra East, Mumbai - 400051 <br />
+                Email: info@noorigroupofcompanies.com
+              </div>
+            </div>
+
+            {/* Embedded Google Map */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "260px",
+                borderRadius: "8px",
+                overflow: "hidden",
+                border: "1px solid rgba(212,175,55,0.3)",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
+              }}
+            >
+              <iframe
+                src="https://maps.google.com/maps?q=306/307,%20Madhava,%20BKC,%20Bandra%20East,%20Mumbai%20-%20400051&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Noori Group BKC Office Map"
+              ></iframe>
+            </div>
+          </div>
+
         </div>
       </main>
 
       {/* Footer */}
       <Footer onRegisterClick={handleOpenModal} />
 
-      {/* Mobile queries for grid columns */}
+      {/* Responsive layout configuration using CSS grid areas */}
       <style>{`
+        .register-grid-container {
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 0 48px;
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          grid-template-areas: 
+            "intro form"
+            "info form";
+          column-gap: 80px;
+          row-gap: 20px;
+          align-items: start;
+        }
         @media (max-width: 991px) {
-          .register-page-container {
+          .register-grid-container {
             grid-template-columns: 1fr !important;
+            grid-template-areas: 
+              "intro"
+              "form"
+              "info" !important;
             padding: 0 24px !important;
-            row-gap: 40px !important;
+            row-gap: 36px !important;
+          }
+          .register-info-block {
+            margin-top: 0 !important;
           }
         }
       `}</style>
