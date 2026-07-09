@@ -15,6 +15,11 @@ export const metadata = {
   metadataBase: new URL("https://noori-group.vercel.app"),
   title: "Leading Real Estate Developer in Mumbai | Noori Group of Companies",
   description: "Noori Group of Companies, a trusted Real Estate Developer in Mumbai since 1987, offers premium properties and sustainable communities.",
+  icons: {
+    icon: "/images/building/logo/symbol-logo.png",
+    shortcut: "/images/building/logo/symbol-logo.png",
+    apple: "/images/building/logo/symbol-logo.png",
+  },
   openGraph: {
     title: "Leading Real Estate Developer in Mumbai | Noori Group of Companies",
     description: "Noori Group of Companies, a trusted Real Estate Developer in Mumbai since 1987, offers premium properties and sustainable communities.",
@@ -43,6 +48,9 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/images/building/logo/symbol-logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/images/building/logo/symbol-logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/building/logo/symbol-logo.png" />
         <link rel="stylesheet" href="/css/all.min_1.css" />
         <link rel="stylesheet" href="/css/frontend.min_1.css" />
         <link rel="stylesheet" href="/css/animations.css" />
