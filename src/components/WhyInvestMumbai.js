@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function WhyInvestDubai() {
+export default function WhyInvestMumbai() {
   return (
     <div 
       className="elementor-element elementor-element-16180ca e-con-full e-flex e-con e-child" 

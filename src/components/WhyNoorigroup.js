@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function WhyDanube() {
+export default function WhyNoorigroup() {
   return (
     <div 
       className="elementor-element elementor-element-013cddc e-con-full e-flex e-con e-child" 
@@ -34,7 +34,7 @@ export default function WhyDanube() {
         <div className="elementor-widget-container">
           <div className="elementor-heading-wrapper">
             <div className="elementor-heading-wrapper-inner">
-              <h2 className="elementor-heading-title elementor-size-default">Danube Properties?</h2>
+              <h2 className="elementor-heading-title elementor-size-default">Noori Group of Companies?</h2>
             </div>
           </div>
         </div>

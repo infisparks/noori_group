@@ -12,8 +12,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://noorigroup.ae"),
   title: "Real Estate Company in Dubai | Leading Real Estate Developer - Noori Group",
   description: "Noori Group, a trusted Real Estate Company in Dubai, offers premium properties for sale. Find your dream home today.",
+  openGraph: {
+    title: "Real Estate Company in Dubai | Leading Real Estate Developer - Noori Group",
+    description: "Noori Group, a trusted Real Estate Company in Dubai, offers premium properties for sale. Find your dream home today.",
+    images: [
+      {
+        url: "/images/building/thumbnail.jpg",
+        width: 800,
+        height: 533,
+        alt: "Noori Group Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Real Estate Company in Dubai | Leading Real Estate Developer - Noori Group",
+    description: "Noori Group, a trusted Real Estate Company in Dubai, offers premium properties for sale. Find your dream home today.",
+    images: ["/images/building/thumbnail.jpg"],
+  },
 };
 
 export default function RootLayout({ children }) {

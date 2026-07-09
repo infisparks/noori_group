@@ -134,7 +134,7 @@ export default function LatestBlogs() {
                         <div className="e-con-inner">
                           <div className="elementor-element elementor-element-d34b211 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="d34b211" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
                             <div className="elementor-widget-container">
-                              <img loading="lazy" decoding="async" width="1200" height="676" src="/images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Danube-1.webp" className="attachment-full size-full wp-image-152480" alt="Greenz launch" srcSet="/images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Danube-1.webp 1200w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Danube-1-300x169.webp 300w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Danube-1-1024x577.webp 1024w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Danube-1-768x433.webp 768w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Danube-1-850x480.webp 850w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Danube-1-700x394.webp 700w" sizes="(max-width: 1200px) 100vw, 1200px" />
+                              <img loading="lazy" decoding="async" width="1200" height="676" src="/images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Noorigroup-1.webp" className="attachment-full size-full wp-image-152480" alt="Greenz launch" srcSet="/images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Noorigroup-1.webp 1200w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Noorigroup-1-300x169.webp 300w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Noorigroup-1-1024x577.webp 1024w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Noorigroup-1-768x433.webp 768w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Noorigroup-1-850x480.webp 850w, /images/Nahyan_bin_Mubarak_UnveilsGreenz-by-Noorigroup-1-700x394.webp 700w" sizes="(max-width: 1200px) 100vw, 1200px" />
                             </div>
                           </div>
                           <div className="elementor-element elementor-element-eeba52f elementor-tablet-align-left elementor-widget elementor-widget-post-info" data-id="eeba52f" data-element_type="widget" data-widget_type="post-info.default">
@@ -158,7 +158,7 @@ export default function LatestBlogs() {
                           <div className="elementor-element elementor-element-1580d7c elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="1580d7c" data-element_type="widget" data-widget_type="theme-post-title.default">
                             <div className="elementor-widget-container">
                               <h5 className="elementor-heading-title elementor-size-default">
-                                <a href="https://danubeproperties.com/nahyan-bin-mubarak-unveils-greenz-by-danube-dubais-first-fully-furnished-master-villa-project/">Nahyan bin Mubarak Unveils Greenz by Danube, Dubai’s First Fully Furnished Master Villa Project</a>
+                                <a href="https://danubeproperties.com/nahyan-bin-mubarak-unveils-greenz-by-danube-dubais-first-fully-furnished-master-villa-project/">Nahyan bin Mubarak Unveils Greenz by Noori Group, Mumbai’s First Fully Furnished Master Villa Project</a>
                               </h5>
                             </div>
                           </div>

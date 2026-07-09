@@ -74,10 +74,10 @@ export default function ContactSection() {
                   decoding="async" 
                   width="1284" 
                   height="1852" 
-                  src="/images/danube-buy-property-dubai.jpg" 
+                  src="/images/noorigroup-buy-property-mumbai.jpg" 
                   className="attachment-full size-full wp-image-151040" 
-                  alt="Danube - Buy Property in Dubai" 
-                  srcSet="/images/danube-buy-property-dubai.jpg 1284w, /images/danube-buy-property-dubai-208x300.jpg 208w, /images/danube-buy-property-dubai-710x1024.jpg 710w, /images/danube-buy-property-dubai-768x1108.jpg 768w, /images/danube-buy-property-dubai-1065x1536.jpg 1065w, /images/danube-buy-property-dubai-700x1010.jpg 700w" 
+                  alt="Noori Group - Buy Property in Mumbai" 
+                  srcSet="/images/noorigroup-buy-property-mumbai.jpg 1284w, /images/noorigroup-buy-property-mumbai-208x300.jpg 208w, /images/noorigroup-buy-property-mumbai-710x1024.jpg 710w, /images/noorigroup-buy-property-mumbai-768x1108.jpg 768w, /images/noorigroup-buy-property-mumbai-1065x1536.jpg 1065w, /images/noorigroup-buy-property-mumbai-700x1010.jpg 700w" 
                   sizes="(max-width: 1284px) 100vw, 1284px" 
                 />
               </div>

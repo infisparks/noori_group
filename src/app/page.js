@@ -4,8 +4,10 @@ import Header from "@/components/Header";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import HeroBanner from "@/components/HeroBanner";
 import AboutSection from "@/components/AboutSection";
+import MissionVision from "@/components/MissionVision";
 import ValuesSection from "@/components/ValuesSection";
 import OngoingProjects from "@/components/OngoingProjects";
+import OtherVentures from "@/components/OtherVentures";
 import RegisterInterestModal from "@/components/RegisterInterestModal";
 
 export default function Home() {
@@ -29,11 +31,17 @@ export default function Home() {
       {/* 4. Featured Projects */}
       <FeaturedProjects onRegisterClick={handleOpenModal} />
 
-      {/* 5. Our Values Section */}
-      <ValuesSection />
+      {/* 5. Mission, Vision & Philosophy Section */}
+      <MissionVision />
 
       {/* 6. On-Going Projects Section */}
       <OngoingProjects onRegisterClick={handleOpenModal} />
+
+      {/* 7. Our Values Section */}
+      <ValuesSection />
+
+      {/* 8. Other Ventures Section */}
+      <OtherVentures />
 
       {/* Modal */}
       <RegisterInterestModal isOpen={isModalOpen} onClose={handleCloseModal} />
