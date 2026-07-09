@@ -241,7 +241,7 @@ export default function CorporateMessage() {
 
           {/* Map Link / Quick CTA */}
           <a
-            href="https://maps.google.com/?q=306/307,+Madhava,+E+Block,+Near+Jio+Mall,+BKC,+Bandra+East,+Mumbai+-+400051"
+            href="https://maps.app.goo.gl/oh3rAJaua9zWRzWCA"
             target="_blank"
             rel="noopener noreferrer"
             style={{

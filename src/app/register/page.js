@@ -114,7 +114,7 @@ export default function RegisterPage() {
               >
                 306/307, Madhava, E Block, <br />
                 BKC, Bandra East, Mumbai - 400051 <br />
-                Email: info@noorigroup.ae
+                Email: info@noorigroupofcompanies.com
               </div>
             </div>
           </div>
