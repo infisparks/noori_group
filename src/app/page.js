@@ -10,13 +10,11 @@ import OngoingProjects from "@/components/OngoingProjects";
 import OtherVentures from "@/components/OtherVentures";
 import CorporateMessage from "@/components/CorporateMessage";
 import Footer from "@/components/Footer";
-import RegisterInterestModal from "@/components/RegisterInterestModal";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  const handleOpenModal = () => {
+    window.location.href = "/register";
+  };
 
   return (
     <div style={{ minHeight: "100vh" }}>
@@ -50,9 +48,6 @@ export default function Home() {
 
       {/* 10. Footer */}
       <Footer onRegisterClick={handleOpenModal} />
-
-      {/* Modal */}
-      <RegisterInterestModal isOpen={isModalOpen} onClose={handleCloseModal} />
 
     </div>
   );

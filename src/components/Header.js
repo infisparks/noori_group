@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "#featured-projects" },
   { label: "About", href: "#about" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "/register" },
 ];
 
 export default function Header({ onRegisterClick }) {

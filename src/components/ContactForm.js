@@ -88,7 +88,7 @@ export default function ContactForm() {
             value={formData.firstName}
             onChange={handleChange}
             placeholder="Enter first name"
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           />
         </div>
@@ -103,7 +103,7 @@ export default function ContactForm() {
             value={formData.lastName}
             onChange={handleChange}
             placeholder="Enter last name"
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           />
         </div>
@@ -122,7 +122,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="e.g. +971 50 123 4567"
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           />
         </div>
@@ -137,7 +137,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Enter email address"
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           />
         </div>
@@ -154,7 +154,7 @@ export default function ContactForm() {
             name="budget"
             value={formData.budget}
             onChange={handleChange}
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           >
             <option value="">Select a Budget</option>
@@ -173,7 +173,7 @@ export default function ContactForm() {
             name="unitType"
             value={formData.unitType}
             onChange={handleChange}
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           >
             <option value="">Select Unit Type</option>
@@ -196,7 +196,7 @@ export default function ContactForm() {
             name="timeline"
             value={formData.timeline}
             onChange={handleChange}
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           >
             <option value="">Purchase Timeline</option>
@@ -214,7 +214,7 @@ export default function ContactForm() {
             name="nationality"
             value={formData.nationality}
             onChange={handleChange}
-            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600"
+            className="w-full text-sm p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37]"
             required
           >
             <option value="">Select Nationality</option>
@@ -226,13 +226,13 @@ export default function ContactForm() {
       </div>
 
       <p className="text-[11px] leading-relaxed text-gray-500 mt-2">
-        Disclaimer: Danube Properties values your privacy and will use the contact information you provide solely for communicating with you about our products and services. By clicking submit, you consent to our sales agents contacting you via phone calls, emails, and WhatsApp messages.
+        Disclaimer: Noori Group of Companies values your privacy and will use the contact information you provide solely for communicating with you about our products and services. By clicking submit, you consent to our sales agents contacting you via phone calls, emails, and WhatsApp messages.
       </p>
 
       <div>
         <button
           type="submit"
-          className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm rounded-lg transition-colors shadow-sm cursor-pointer"
+          className="w-full py-3 bg-[#0a1628] hover:bg-[#d4af37] text-white hover:text-[#050c23] font-semibold text-sm rounded-lg transition-all duration-300 shadow-sm cursor-pointer"
         >
           Submit
         </button>
