@@ -8,6 +8,7 @@ import MissionVision from "@/components/MissionVision";
 import ValuesSection from "@/components/ValuesSection";
 import OngoingProjects from "@/components/OngoingProjects";
 import OtherVentures from "@/components/OtherVentures";
+import CorporateMessage from "@/components/CorporateMessage";
 import RegisterInterestModal from "@/components/RegisterInterestModal";
 
 export default function Home() {
@@ -42,6 +43,9 @@ export default function Home() {
 
       {/* 8. Other Ventures Section */}
       <OtherVentures />
+
+      {/* 9. Corporate Message Section */}
+      <CorporateMessage />
 
       {/* Modal */}
       <RegisterInterestModal isOpen={isModalOpen} onClose={handleCloseModal} />
