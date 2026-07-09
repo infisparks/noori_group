@@ -9,6 +9,14 @@ export default function OngoingProjects({ onRegisterClick }) {
 
   const projects = [
     {
+      title: "Noori Crest",
+      subtitle: "Off Mumbra Bypass (7-Storey Residential & Commercial)",
+      description:
+        "Noori Crest project encompasses the development of a 7-storey residential cum commercial tower strategically situated off the bustling Mumbra bypass. Nestled within a serene and respectable neighborhood, the tower boasts a picturesque backdrop of majestic mountains and lush greenery, offering residents a tranquil and refreshing living environment. The location’s prime advantage lies in its proximity to esteemed educational institutions and top-notch medical facilities, ensuring a convenient and holistic lifestyle for families.",
+      imageDesktop: "/images/building/PC VERSION/nooricrest.jpg",
+      imageMobile: "/images/building/mobile version/nooricrest.jpg",
+    },
+    {
       title: "Noori Horizon",
       subtitle: "Premium Residential Landmark (Mumbra)",
       description:
@@ -25,14 +33,6 @@ export default function OngoingProjects({ onRegisterClick }) {
         "Notably, it also serves as an SRA (Slum Rehabilitation Authority) project, demonstrating the builder’s commitment to community development. Additionally, the provision of a separate 18-story building for tenants underscores the builder’s dedication to creating an inclusive and thriving community within this iconic urban enclave.",
       imageDesktop: "/images/building/PC VERSION/rehabilitation.jpg",
       imageMobile: "/images/building/mobile version/rehabilitation.jpg",
-    },
-    {
-      title: "Noori Crest",
-      subtitle: "Off Mumbra Bypass (7-Storey Residential & Commercial)",
-      description:
-        "Noori Crest project encompasses the development of a 7-storey residential cum commercial tower strategically situated off the bustling Mumbra bypass. Nestled within a serene and respectable neighborhood, the tower boasts a picturesque backdrop of majestic mountains and lush greenery, offering residents a tranquil and refreshing living environment. The location’s prime advantage lies in its proximity to esteemed educational institutions and top-notch medical facilities, ensuring a convenient and holistic lifestyle for families.",
-      imageDesktop: "/images/building/PC VERSION/nooricrest.jpg",
-      imageMobile: "/images/building/mobile version/nooricrest.jpg",
     },
   ];
 
